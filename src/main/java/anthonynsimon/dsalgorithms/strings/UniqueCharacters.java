@@ -5,7 +5,7 @@ public class UniqueCharacters {
   // Returns if a string's characters are all unique
   // Time O(N)
   public boolean hasUniqueChars(String str) {
-    // Return false if string is empty or has more chars than ASCII chars
+    // Return false if string is empty or has more chars than what ASCII supports
     if (str.isEmpty() || str.length() > 128) {
       return false;
     }
