@@ -1,6 +1,7 @@
 package anthonynsimon.dsalgorithms.strings;
 
 public class PermutationMatch {
+  
   // Returns true if one string is a permutation of another
   // Time O(N)
   public boolean isPermutation(String strA, String strB) {

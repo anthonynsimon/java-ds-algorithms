@@ -4,14 +4,27 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PermutationMatchTest {
+  
+  private PermutationMatch classUnderTest = new PermutationMatch();
+  
   @Test
   public void testIsPermutation() {
-    PermutationMatch classUnderTest = new PermutationMatch();
-
-    assertTrue("it's permutation, should return true", classUnderTest.isPermutation("hello", "llheo"));
-    assertTrue("empty returns true as they match", classUnderTest.isPermutation("", ""));
-    assertFalse("their values add to the same, but different chars", classUnderTest.isPermutation("ab", "bc"));
-    assertFalse("different length", classUnderTest.isPermutation("what", "wa"));
-    assertFalse("case sensitive", classUnderTest.isPermutation("Canada", "canada"));
+    assertTrue(classUnderTest.isPermutation("hello", "llheo"));
+    assertFalse(classUnderTest.isPermutation("what", "wa"));
+  }
+  
+  @Test
+  public void testTwoEmptyStrings() {
+    assertTrue(classUnderTest.isPermutation("", ""));
+  }
+  
+  @Test 
+  public void testSameValuesDifferentChars() {
+    assertFalse(classUnderTest.isPermutation("ab", "bc"));
+  }
+  
+  @Test
+  public void testCaseSensitive() {
+    assertFalse(classUnderTest.isPermutation("Canada", "canada"));
   }
 }
