@@ -77,8 +77,8 @@ public class PermutationPalindrome {
   
   private String cleanUp(String str) {
     Sanitizer sanitizer = new Sanitizer();
-    char[] backlist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
-    String sanitizedStr = sanitizer.sanitize(str, backlist);
+    char[] blacklist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
+    String sanitizedStr = sanitizer.sanitize(str, blacklist);
     
     return sanitizedStr.toLowerCase();
   }

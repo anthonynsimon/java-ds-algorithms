@@ -29,10 +29,10 @@ public class PalindromeCheckerTest {
       "a !man, a plan, a -canal: panama."
     };
     
-    char[] backlist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
+    char[] blacklist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
     
     for (String p : palindromes) {
-      assertTrue(PalindromeChecker.isPalindrome(p, backlist));
+      assertTrue(PalindromeChecker.isPalindrome(p, blacklist));
     }
   }
   
@@ -43,10 +43,10 @@ public class PalindromeCheckerTest {
       "Are we not pure? \"No sir!\" Panama's moody Noriega brags. \"It is garbage!\" Irony dooms a man; a prisoner up to new era."
     };
     
-    char[] backlist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
+    char[] blacklist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
     
     for (String p : palindromes) {
-      assertTrue(PalindromeChecker.isPalindromeIgnoreCase(p, backlist));
+      assertTrue(PalindromeChecker.isPalindromeIgnoreCase(p, blacklist));
     }
   }
   

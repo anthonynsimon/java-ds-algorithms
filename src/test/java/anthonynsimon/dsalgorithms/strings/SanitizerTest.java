@@ -9,18 +9,18 @@ public class SanitizerTest {
   
   @Test
   public void testSanitizer() {
-    char[] backlist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
+    char[] blacklist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
     
-    assertEquals("", classUnderTest.sanitize("...", backlist));
-    assertEquals("_____", classUnderTest.sanitize("_____", backlist));
-    assertEquals("asdtasdasdfas", classUnderTest.sanitize("asd,tasdasd.!fa!s", backlist));
-    assertEquals("16asd5asda87as", classUnderTest.sanitize("16asd5.asda87?as", backlist));
-    assertEquals("", classUnderTest.sanitize("", backlist));
-    assertEquals("abcdefg", classUnderTest.sanitize("a?:b,-cde'fg\"", backlist));
+    assertEquals("", classUnderTest.sanitize("...", blacklist));
+    assertEquals("_____", classUnderTest.sanitize("_____", blacklist));
+    assertEquals("asdtasdasdfas", classUnderTest.sanitize("asd,tasdasd.!fa!s", blacklist));
+    assertEquals("16asd5asda87as", classUnderTest.sanitize("16asd5.asda87?as", blacklist));
+    assertEquals("", classUnderTest.sanitize("", blacklist));
+    assertEquals("abcdefg", classUnderTest.sanitize("a?:b,-cde'fg\"", blacklist));
     
-    char[] backlist2 = {'_'};
+    char[] blacklist2 = {'_'};
     
-    assertEquals("", classUnderTest.sanitize("_____", backlist2));
+    assertEquals("", classUnderTest.sanitize("_____", blacklist2));
 
   }
 }

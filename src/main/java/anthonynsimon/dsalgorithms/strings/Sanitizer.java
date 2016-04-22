@@ -2,13 +2,13 @@ package anthonynsimon.dsalgorithms.strings;
 
 public class Sanitizer {
   
-  public String sanitize(String str, char[] backlist) {
+  public String sanitize(String str, char[] blacklist) {
     int strLength = str.length();
     StringBuilder sb = new StringBuilder();
     
     for (int i = 0; i < strLength; i++) {
       char currentChar = str.charAt(i);
-      if (!charInArray(currentChar, backlist)) {
+      if (!charInArray(currentChar, blacklist)) {
         sb.append(currentChar);
       }
     }

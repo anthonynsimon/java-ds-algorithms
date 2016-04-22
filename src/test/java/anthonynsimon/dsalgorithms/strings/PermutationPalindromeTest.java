@@ -15,9 +15,10 @@ public class PermutationPalindromeTest {
   @Test
   public void testStringsWithPalindromeBruteForce() {
     String[] testStrings = {
-      // First two omitted, would take too long on brute force
-      // "a man, a plan, a canal, panama!",
-      // " a canal, a man, panama! a ,plan.",
+      /* First two omitted, would take too long on brute force
+      * "a man, a plan, a canal, panama!",
+      * " a canal, a man, panama! a ,plan.",
+      */
       "taco cat",
       "atcc o.ta",
       "aabbcc",
@@ -45,20 +46,20 @@ public class PermutationPalindromeTest {
     }
   }
   
-  // @Test
-  // public void testStringsWithoutPalindrome() {
-  //   String[] testStrings = {
-  //     "autcc ota",
-  //     "@@yyan",
-  //     "abc",
-  //     "atcc o.tava",
-  //     "4554913"
-  //   };
+  @Test
+  public void testStringsWithoutPalindrome() {
+    String[] testStrings = {
+      "autcc ota",
+      "@@yyan",
+      "abc",
+      "atcc o.tava",
+      "4554913"
+    };
     
-  //   for (String str : testStrings) {
-  //     assertFalse(classUnderTest.isPermutationOfPalindrome(str));
-  //   }
-  // }
+    for (String str : testStrings) {
+      assertFalse(classUnderTest.isPermutationOfPalindrome(str));
+    }
+  }
   
   @Test
   public void testStringsWithoutPalindromeBruteForce() {
