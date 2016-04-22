@@ -9,3 +9,4 @@ Trying out various DS and Algorithms for learning purposes and to refresh my Jav
 - [Check if string is permutation of a palindrome](/src/main/java/anthonynsimon/dsalgorithms/strings/PermutationPalindrome.java)
 - [Check if string is palindrome](/src/main/java/anthonynsimon/dsalgorithms/strings/PalindromeChecker.java)
 - [String sanitizer](/src/main/java/anthonynsimon/dsalgorithms/strings/Sanitizer.java)
+- [Check if strings have more than one edit](/src/main/java/anthonynsimon/dsalgorithms/strings/OneEditChecker.java)
