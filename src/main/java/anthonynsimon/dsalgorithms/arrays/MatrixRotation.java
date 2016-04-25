@@ -5,10 +5,32 @@ public class MatrixRotation {
   public int[][] rotate(int[][] matrix) {
     int sideLength = matrix.length;
     
-    if (sideLength != matrix[0].length) {
+    // Return early if matrix is not square or if it's empty
+    if (sideLength == 0 || sideLength != matrix[0].length) {
       return matrix;
     }
     
+    /*
+    * Iterate over each "layer", starting from the corners swap each cell in-place.
+    *
+    * Layers move from the outside-in.
+    *
+    * [X][X][X][X]  ->  [ ][ ][ ][ ]
+    * [X][ ][ ][X]  ->  [ ][X][X][ ]
+    * [X][ ][ ][X]  ->  [ ][X][X][ ]
+    * [X][X][X][X]  ->  [ ][ ][ ][ ]
+    *
+    * Positions move from each segment's start until one unit before the last,
+    * as that has already been rotated.
+    *
+    * A <= B <= C <= D <= A
+    *
+    * [D][ ][ ][C]  ->  [ ][ ][C][ ]  ->  [ ][C][ ][ ]  ->  [ ][ ][ ][ ]
+    * [ ][ ][ ][ ]  ->  [D][ ][ ][ ]  ->  [ ][ ][ ][B]  ->  [ ][D][C][ ]
+    * [ ][ ][ ][ ]  ->  [ ][ ][ ][B]  ->  [D][ ][ ][ ]  ->  [ ][A][B][ ]
+    * [A][ ][ ][B]  ->  [ ][A][ ][ ]  ->  [ ][ ][A][ ]  ->  [ ][ ][ ][ ]
+    * 
+    */
     for (int layer = 0; layer < sideLength/2; layer++) {
       for (int position = layer; position < sideLength-1-layer; position++) {
         int temp = matrix[position][layer];
