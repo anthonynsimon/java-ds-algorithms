@@ -1,8 +1,9 @@
-# Java Data Structures and Algorithms
+# Data Structures and Algorithms in Java
 Trying out various DS and Algorithms for learning purposes and to refresh my Java skills.
 
 ## Arrays
 - [In-place matrix rotation](/src/main/java/anthonynsimon/dsalgorithms/arrays/MatrixRotation.java)
+- [Nullify rows and columns in matrix](/src/main/java/anthonynsimon/dsalgorithms/arrays/NullifyMatrix.java)
 
 ## Strings
 - [String has unique characters](/src/main/java/anthonynsimon/dsalgorithms/strings/UniqueCharacters.java)
