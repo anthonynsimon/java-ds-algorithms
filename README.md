@@ -1,5 +1,8 @@
 # Java Data Structures and Algorithms
-Trying out various DS and Algorithms for learning purposes and to refresh my Java.
+Trying out various DS and Algorithms for learning purposes and to refresh my Java skills.
+
+## Arrays
+- [In-place matrix rotation](/src/main/java/anthonynsimon/dsalgorithms/arrays/MatrixRotation.java)
 
 ## Strings
 - [String has unique characters](/src/main/java/anthonynsimon/dsalgorithms/strings/UniqueCharacters.java)
