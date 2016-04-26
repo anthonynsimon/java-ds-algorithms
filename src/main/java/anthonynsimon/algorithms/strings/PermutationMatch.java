@@ -1,4 +1,4 @@
-package anthonynsimon.dsalgorithms.strings;
+package anthonynsimon.algorithms.strings;
 
 public class PermutationMatch {
   

@@ -1,4 +1,4 @@
-package anthonynsimon.dsalgorithms.arrays;
+package anthonynsimon.algorithms.arrays;
 
 public class NullifyMatrix {
   

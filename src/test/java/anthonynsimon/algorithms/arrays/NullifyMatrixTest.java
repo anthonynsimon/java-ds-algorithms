@@ -1,4 +1,4 @@
-package anthonynsimon.dsalgorithms.arrays;
+package anthonynsimon.algorithms.arrays;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
