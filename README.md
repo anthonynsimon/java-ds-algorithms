@@ -1,11 +1,16 @@
 # Data Structures and Algorithms in Java
 Trying out various DS and Algorithms for learning purposes and to refresh my Java skills.
 
-## Arrays
+## Data Structures:
+- [Singly Linked List](/src/main/java/anthonynsimon/datastructures/linkedlist/LinkedList.java)
+
+
+## Algorithms:
+### Arrays
 - [In-place matrix rotation](/src/main/java/anthonynsimon/algorithms/arrays/MatrixRotation.java)
 - [Nullify rows and columns in matrix](/src/main/java/anthonynsimon/algorithms/arrays/NullifyMatrix.java)
 
-## Strings
+### Strings
 - [String has unique characters](/src/main/java/anthonynsimon/algorithms/strings/UniqueCharacters.java)
 - [Check if string is permutation of another](/src/main/java/anthonynsimon/algorithms/strings/PermutationMatch.java)
 - [URLify string](/src/main/java/anthonynsimon/algorithms/strings/Urlifier.java)
