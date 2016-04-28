@@ -20,3 +20,7 @@ Trying out various DS and Algorithms for learning purposes and to refresh my Jav
 - [String sanitizer](/src/main/java/anthonynsimon/algorithms/strings/Sanitizer.java)
 - [Check if strings have more than one edit](/src/main/java/anthonynsimon/algorithms/strings/OneEditChecker.java)
 - [Basic string compression](/src/main/java/anthonynsimon/algorithms/strings/StringCompressor.java)
+
+### Linked Lists
+- [Remove duplicate values](/src/main/java/anthonynsimon/algorithms/lists/RemoveListDuplicates.java)
+- [Find Kth to last element (unkown list size)](/src/main/java/anthonynsimon/algorithms/lists/FindKthToLast.java)
