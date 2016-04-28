@@ -27,6 +27,49 @@ public class LinkedListTest {
   }
   
   @Test
+  public void testListConstruction() {
+    LinkedList<String> list = new LinkedList<>("Hello there");
+    assertEquals(list.size(), 1);
+    assertTrue(list.contains("Hello there"));
+    
+    LinkedList<String> list2 = new LinkedList<>();
+    
+    list2.build(new String[]{
+      "hey",
+      "you",
+      "hey",
+      "hey",
+    });
+    
+    assertEquals(list2.size(), 4);
+    assertTrue(list2.contains("you"));
+  }
+  
+  @Test
+  public void testListBuild() {    
+    LinkedList<String> list = new LinkedList<>();
+    
+    list.build(new String[]{
+      "hey",
+      "you",
+      "hey",
+      "hey",
+    });
+    
+    assertEquals(list.size(), 4);
+    assertTrue(list.contains("you"));
+    
+    list.build(new String[]{
+      "one",
+      "two"
+    });
+    
+    assertEquals(list.size(), 2);
+    assertTrue(list.contains("two"));
+    assertFalse(list.contains("hey"));
+  }
+  
+  @Test
   public void testOneElement() {
     LinkedList<String> list = new LinkedList<>();
     

@@ -2,13 +2,23 @@ package anthonynsimon.datastructures.linkedlist;
 
 public class LinkedList<E> {
   
-  private int size;
-  private Node<E> head;
-  private Node<E> tail;
+  protected int size;
+  protected Node<E> head;
   
   public LinkedList() {
     this.size = 0;
     this.head = null;
+  }
+  
+  public LinkedList(E item) {
+    append(item);
+  }
+  
+  public void build(E[] items) {
+    clear();
+    for (int i = 0; i < items.length; i++) {
+      append(items[i]);
+    }
   }
   
   public int size() {
@@ -60,7 +70,7 @@ public class LinkedList<E> {
       throw new IndexOutOfBoundsException();
     }
     
-    Node<E> newNode = new Node(item);
+    Node<E> newNode = new Node<E>(item);
     
     // If it's first node, set as new head
     if (index == 0) {
@@ -81,7 +91,7 @@ public class LinkedList<E> {
     if (isOutOfRange(index)) {
       throw new IndexOutOfBoundsException();
     }
-    
+        
     // If removing head node, simply set it's next one
     if (index == 0) {
       this.head = this.head.getNext();
