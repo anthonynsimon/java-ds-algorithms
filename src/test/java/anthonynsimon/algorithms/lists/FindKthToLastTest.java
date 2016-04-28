@@ -11,7 +11,9 @@ public class FindKthToLastTest {
     String[] data = {};
     classUnderTest.build(data);
     
-    assertEquals(classUnderTest.findKthToLast(4), null);    
+    assertEquals(classUnderTest.findKthToLast(-1), null);    
+    assertEquals(classUnderTest.findKthToLast(5), null);    
+    assertEquals(classUnderTest.findKthToLast(0), null);    
   }
   
   @Test
@@ -28,6 +30,7 @@ public class FindKthToLastTest {
     classUnderTest.build(data);
     
     assertEquals(classUnderTest.findKthToLast(4), null);
+    assertEquals(classUnderTest.findKthToLast(10), null);
   }
   
   @Test
@@ -44,5 +47,7 @@ public class FindKthToLastTest {
     classUnderTest.build(data);
     
     assertEquals(classUnderTest.findKthToLast(2), "cd");
+    assertEquals(classUnderTest.findKthToLast(0), "gh");
+    assertEquals(classUnderTest.findKthToLast(3), "ab");
   }
 }

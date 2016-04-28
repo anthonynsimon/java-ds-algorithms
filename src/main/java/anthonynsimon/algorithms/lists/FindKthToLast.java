@@ -9,6 +9,9 @@ public class FindKthToLast<E> extends LinkedList<E> {
   // Assume that list size is unkown, otherwise it would be
   // a trivial (size -1 -Kth) search
   public E findKthToLast(int kth) {
+    // Make sure value is positive, we cannot have a value that is '-1th' before the last
+    kth = Math.abs(kth);
+    
     Node<E> runner = this.head;
     Node<E> laggard = this.head;
     
