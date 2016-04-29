@@ -1,9 +1,11 @@
 # Data Structures and Algorithms in Java
 Trying out various DS and Algorithms for learning purposes and to refresh my Java skills.
 
+All with their corresponding tests. [Go to tests root directory](/src/test/java/anthonynsimon/)
+
 ## Data Structures:
 - [Singly Linked List](/src/main/java/anthonynsimon/datastructures/linkedlist/LinkedList.java)
-
+- [Stack](/src/main/java/anthonynsimon/datastructures/stack/Stack.java)
 
 ## Algorithms:
 ### Arrays
