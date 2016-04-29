@@ -33,14 +33,14 @@ public class ListPalindromeChecker<E> extends LinkedList<E> {
       numberOfItems++;
     }
     
-    // If we have an even number of items, then we pushed the exact middle onto the stack.
-    // Pop one element so that we only have "mirrored pairs" to compare.
+    // If we have an even number of items, then we pushed the exact middle to the stack.
+    // Pop one element so that we only have "mirrored pairs" for the comparison.
     // No need to move the laggard as it is already pointing at the next position.
-    if (numberOfItems > 1 && numberOfItems % 2 == 1) {
+    if (numberOfItems % 2 == 1) {
       stack.pop();
     }
     
-    // Compare the laggards current position data against what we pushed to the stack.
+    // Compare the laggard's current position data against what we pushed to the stack.
     // At this point if the list is a palindrome every position should match the stack because
     // it is essentially a reversed second half of the list.
     while (laggard != null) {
