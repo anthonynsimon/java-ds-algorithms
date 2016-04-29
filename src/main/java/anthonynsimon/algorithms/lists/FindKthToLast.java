@@ -1,6 +1,6 @@
 package anthonynsimon.algorithms.lists;
 
-import anthonynsimon.datastructures.linkedlist.Node;
+import anthonynsimon.datastructures.common.SinglyNode;
 import anthonynsimon.datastructures.linkedlist.LinkedList;
 
 public class FindKthToLast<E> extends LinkedList<E> {
@@ -12,8 +12,8 @@ public class FindKthToLast<E> extends LinkedList<E> {
     // Make sure value is positive, we cannot have a value that is '-1th' before the last
     kth = Math.abs(kth);
     
-    Node<E> runner = this.head;
-    Node<E> laggard = this.head;
+    SinglyNode<E> runner = this.head;
+    SinglyNode<E> laggard = this.head;
     
     for (int i = 0; i <= kth; i++) {
       // If runner is null before reaching kth index,

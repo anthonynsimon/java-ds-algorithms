@@ -1,16 +1,16 @@
-package anthonynsimon.datastructures.linkedlist;
+package anthonynsimon.datastructures.common;
 
-public class Node<T> {
+public class SinglyNode<T> {
   
   private T data;
-  private Node<T> next;
+  private SinglyNode<T> next;
   
-  public Node(T data) {
+  public SinglyNode(T data) {
     this.data = data;
     this.next = null;
   }
   
-  public Node(T data, Node<T> next) {
+  public SinglyNode(T data, SinglyNode<T> next) {
     this.data = data;
     this.next = next;
   }
@@ -23,11 +23,11 @@ public class Node<T> {
     this.data = data;
   }
   
-  public Node<T> getNext() {
+  public SinglyNode<T> getNext() {
     return this.next;
   }
   
-  public void setNext(Node<T> next) {
+  public void setNext(SinglyNode<T> next) {
     this.next = next;
   }
 }

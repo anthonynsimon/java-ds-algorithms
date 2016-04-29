@@ -1,9 +1,11 @@
 package anthonynsimon.datastructures.linkedlist;
 
+import anthonynsimon.datastructures.common.SinglyNode;
+
 public class LinkedList<E> {
   
   protected int size;
-  protected Node<E> head;
+  protected SinglyNode<E> head;
   
   public LinkedList() {
     this.size = 0;
@@ -34,14 +36,14 @@ public class LinkedList<E> {
   }
   
   public void append(E item) {
-    Node<E> newNode = new Node<E>(item);
+    SinglyNode<E> newNode = new SinglyNode<E>(item);
     // If list is empty, setup initial nodes
     if (size() == 0) {
       this.head = newNode;
     }
     // If the list is not empty, add as last element
     else {
-      Node<E> lastNode = getNodeAtIndex(size() - 1);
+      SinglyNode<E> lastNode = getNodeAtIndex(size() - 1);
       lastNode.setNext(newNode);
     }
     this.size++;
@@ -52,7 +54,7 @@ public class LinkedList<E> {
       throw new IndexOutOfBoundsException();
     }
     
-    Node<E> selectedNode = getNodeAtIndex(index);
+    SinglyNode<E> selectedNode = getNodeAtIndex(index);
     return selectedNode.getData();
   }
   
@@ -61,7 +63,7 @@ public class LinkedList<E> {
       throw new IndexOutOfBoundsException();
     }
     
-    Node<E> selectedNode = getNodeAtIndex(index);
+    SinglyNode<E> selectedNode = getNodeAtIndex(index);
     selectedNode.setData(item);
   }
   
@@ -70,7 +72,7 @@ public class LinkedList<E> {
       throw new IndexOutOfBoundsException();
     }
     
-    Node<E> newNode = new Node<E>(item);
+    SinglyNode<E> newNode = new SinglyNode<E>(item);
     
     // If it's first node, set as new head
     if (index == 0) {
@@ -79,7 +81,7 @@ public class LinkedList<E> {
     }
     // If not, find previous node to selected index and reconnect after it
     else {
-      Node<E> previousNode = getNodeAtIndex(index - 1);
+      SinglyNode<E> previousNode = getNodeAtIndex(index - 1);
       newNode.setNext(previousNode.getNext());
       previousNode.setNext(newNode);
     }
@@ -98,14 +100,14 @@ public class LinkedList<E> {
     }
     else {
       // Find previous node
-      Node<E> previousNode = getNodeAtIndex(index - 1);
+      SinglyNode<E> previousNode = getNodeAtIndex(index - 1);
       // If trying to remove last set it's previous node next connection to null
       if (index == size() - 1) {
         previousNode.setNext(null);
       }
       // If not, interconnect previous and next
       else {
-        Node<E> selectedNode = previousNode.getNext();
+        SinglyNode<E> selectedNode = previousNode.getNext();
         previousNode.setNext(selectedNode.getNext());
       }
     }
@@ -113,7 +115,7 @@ public class LinkedList<E> {
     this.size--;
   }
   public boolean contains(E item) {
-    Node<E> current = this.head;
+    SinglyNode<E> current = this.head;
     while (current != null) {
       if (current.getData() == item) {
         return true;
@@ -139,8 +141,8 @@ public class LinkedList<E> {
     // If not, then save the last node's data
     // and set the previous node's next connection to null
     else {
-      Node<E> previous = getNodeAtIndex(size() -2);
-      Node<E> last = previous.getNext();
+      SinglyNode<E> previous = getNodeAtIndex(size() -2);
+      SinglyNode<E> last = previous.getNext();
       temp = last.getData();
       previous.setNext(null);
     }
@@ -151,7 +153,7 @@ public class LinkedList<E> {
   }
   
   public E getLast() {
-    Node<E> selectedNode = getNodeAtIndex(size() - 1);
+    SinglyNode<E> selectedNode = getNodeAtIndex(size() - 1);
     return selectedNode != null ? selectedNode.getData() : null;
   }
   
@@ -165,7 +167,7 @@ public class LinkedList<E> {
     E[] result = (E[]) new Object[size()];
     
     // Dont't use 'E' type for Node here, as it conflicts with inner class E
-    Node current = this.head;
+    SinglyNode current = this.head;
     for (int i = 0; i < size(); i++) {
       result[i] = (E)current.getData();
       current = current.getNext();
@@ -181,7 +183,7 @@ public class LinkedList<E> {
   public String toString(String glue) {
     StringBuilder sb = new StringBuilder();
     
-    Node<E> current = this.head;
+    SinglyNode<E> current = this.head;
     for (int i = 0; i < size(); i++) {
       sb.append(current.getData());
       if (i != size() - 1) {
@@ -197,9 +199,9 @@ public class LinkedList<E> {
     return index < 0 || size() <= index;
   }
   
-  private Node<E> getNodeAtIndex(int index) {    
+  private SinglyNode<E> getNodeAtIndex(int index) {    
     int i = 0;
-    Node<E> current = this.head;
+    SinglyNode<E> current = this.head;
     while (current != null) {
       if (i == index) {
         return current;

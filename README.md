@@ -25,3 +25,4 @@ Trying out various DS and Algorithms for learning purposes and to refresh my Jav
 - [Remove duplicate values](/src/main/java/anthonynsimon/algorithms/lists/RemoveListDuplicates.java)
 - [Find Kth to last element (unkown list size)](/src/main/java/anthonynsimon/algorithms/lists/FindKthToLast.java)
 - [Partition list in place](/src/main/java/anthonynsimon/algorithms/lists/PartitionList.java)
+- [Check if list is palindrome](/src/main/java/anthonynsimon/algorithms/lists/ListPalindromeChecker.java)

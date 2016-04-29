@@ -2,7 +2,7 @@ package anthonynsimon.algorithms.lists;
 
 import java.util.HashSet;
 
-import anthonynsimon.datastructures.linkedlist.Node;
+import anthonynsimon.datastructures.common.SinglyNode;
 import anthonynsimon.datastructures.linkedlist.LinkedList;
 
 public class RemoveListDuplicates<E> extends LinkedList<E> {
@@ -13,8 +13,8 @@ public class RemoveListDuplicates<E> extends LinkedList<E> {
     // values we have already seen. Good for O(1) lookups.
     HashSet<Object> alreadySeen = new HashSet<>();
     
-    Node<E> previous = null;
-    Node<E> current = this.head;
+    SinglyNode<E> previous = null;
+    SinglyNode<E> current = this.head;
     while (current != null) {
       E data = current.getData();
       

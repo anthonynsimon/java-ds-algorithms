@@ -1,17 +1,17 @@
-package anthonynsimon.datastructures.linkedlist;
+package anthonynsimon.datastructures.common;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class NodeTest {
+public class SinglyNodeTest {
   
   @Test
   public void testNodeInit() {
-    Node<String> nodeWithValue = new Node<String>("test");
+    SinglyNode<String> nodeWithValue = new SinglyNode<String>("test");
     assertEquals(nodeWithValue.getData(), "test");
     assertEquals(nodeWithValue.getNext(), null);
 
-    Node<String> nodeWithNext = new Node<>("test2", nodeWithValue);
+    SinglyNode<String> nodeWithNext = new SinglyNode<>("test2", nodeWithValue);
     assertEquals(nodeWithNext.getData(), "test2");
     assertEquals(nodeWithNext.getNext().getData(), "test");
     assertEquals(nodeWithNext.getNext().getNext(), null);
@@ -19,13 +19,13 @@ public class NodeTest {
   
   @Test
   public void testNodeChaining() {
-    Node<String> head = new Node<>(String.format("element %d", 0));
+    SinglyNode<String> head = new SinglyNode<>(String.format("element %d", 0));
     int totalNodes = 100;
    
     // Chain nodes and set sequential values
-    Node<String> currentNode = head;
+    SinglyNode<String> currentNode = head;
     for (int i = 1; i < totalNodes; i++) {
-      currentNode.setNext(new Node<String>(String.format("element %d", i)));
+      currentNode.setNext(new SinglyNode<String>(String.format("element %d", i)));
       currentNode = currentNode.getNext();
     }
     
@@ -43,13 +43,13 @@ public class NodeTest {
   
   @Test
   public void testSetData() {
-    Node<String> head = new Node<>(String.format("element %d", 0));
+    SinglyNode<String> head = new SinglyNode<>(String.format("element %d", 0));
     int totalNodes = 100;
     
     // Chain nodes and set sequential values
-    Node<String> currentNode = head;
+    SinglyNode<String> currentNode = head;
     for (int i = 1; i < totalNodes; i++) {
-      currentNode.setNext(new Node<String>(String.format("element %d", i)));
+      currentNode.setNext(new SinglyNode<String>(String.format("element %d", i)));
       currentNode = currentNode.getNext();
     }
     
