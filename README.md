@@ -3,10 +3,6 @@ Trying out various DS and Algorithms for learning purposes and to refresh my Jav
 
 All with their corresponding tests. [Go to tests root directory](/src/test/java/anthonynsimon/)
 
-## Data Structures:
-- [Singly Linked List](/src/main/java/anthonynsimon/datastructures/LinkedList.java)
-- [Stack](/src/main/java/anthonynsimon/datastructures/Stack.java)
-
 ## Algorithms:
 ### Arrays
 - [In-place matrix rotation](/src/main/java/anthonynsimon/algorithms/arrays/MatrixRotation.java)
@@ -16,7 +12,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [String has unique characters](/src/main/java/anthonynsimon/algorithms/strings/UniqueCharacters.java)
 - [Check if string is permutation of another](/src/main/java/anthonynsimon/algorithms/strings/PermutationMatch.java)
 - [URLify string](/src/main/java/anthonynsimon/algorithms/strings/Urlifier.java)
-- [Reverse string in place](/src/main/java/anthonynsimon/algorithms/strings/Reverser.java)
+- [Reverse string](/src/main/java/anthonynsimon/algorithms/strings/Reverser.java)
 - [Check if string is permutation of a palindrome](/src/main/java/anthonynsimon/algorithms/strings/PermutationPalindrome.java)
 - [Check if string is palindrome](/src/main/java/anthonynsimon/algorithms/strings/PalindromeChecker.java)
 - [String sanitizer](/src/main/java/anthonynsimon/algorithms/strings/Sanitizer.java)
@@ -28,3 +24,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Find Kth to last element (unkown list size)](/src/main/java/anthonynsimon/algorithms/lists/FindKthToLast.java)
 - [Partition list in place](/src/main/java/anthonynsimon/algorithms/lists/PartitionList.java)
 - [Check if list is palindrome](/src/main/java/anthonynsimon/algorithms/lists/ListPalindromeChecker.java)
+
+## Data Structures:
+- [Singly Linked List](/src/main/java/anthonynsimon/datastructures/LinkedList.java)
+- [Stack](/src/main/java/anthonynsimon/datastructures/Stack.java)
