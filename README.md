@@ -24,3 +24,4 @@ Trying out various DS and Algorithms for learning purposes and to refresh my Jav
 ### Linked Lists
 - [Remove duplicate values](/src/main/java/anthonynsimon/algorithms/lists/RemoveListDuplicates.java)
 - [Find Kth to last element (unkown list size)](/src/main/java/anthonynsimon/algorithms/lists/FindKthToLast.java)
+- [Partition list in place](/src/main/java/anthonynsimon/algorithms/lists/PartitionList.java)
