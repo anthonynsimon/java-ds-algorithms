@@ -1,4 +1,4 @@
-package anthonynsimon.datastructures.common;
+package anthonynsimon.datastructures;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

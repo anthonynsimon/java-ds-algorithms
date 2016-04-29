@@ -2,8 +2,8 @@ package anthonynsimon.algorithms.lists;
 
 import java.util.HashSet;
 
-import anthonynsimon.datastructures.common.SinglyNode;
-import anthonynsimon.datastructures.linkedlist.LinkedList;
+import anthonynsimon.datastructures.SinglyNode;
+import anthonynsimon.datastructures.LinkedList;
 
 public class RemoveListDuplicates<E> extends LinkedList<E> {
   

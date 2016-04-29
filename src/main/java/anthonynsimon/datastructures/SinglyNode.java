@@ -1,4 +1,4 @@
-package anthonynsimon.datastructures.common;
+package anthonynsimon.datastructures;
 
 public class SinglyNode<T> {
   

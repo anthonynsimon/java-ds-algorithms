@@ -1,8 +1,8 @@
 package anthonynsimon.algorithms.lists;
 
-import anthonynsimon.datastructures.common.SinglyNode;
-import anthonynsimon.datastructures.stack.Stack;
-import anthonynsimon.datastructures.linkedlist.LinkedList;
+import anthonynsimon.datastructures.SinglyNode;
+import anthonynsimon.datastructures.Stack;
+import anthonynsimon.datastructures.LinkedList;
 
 public class ListPalindromeChecker<E> extends LinkedList<E> {
   

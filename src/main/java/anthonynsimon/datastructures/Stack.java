@@ -1,6 +1,4 @@
-package anthonynsimon.datastructures.stack;
-
-import anthonynsimon.datastructures.common.SinglyNode;
+package anthonynsimon.datastructures;
 
 public class Stack<E> {
   

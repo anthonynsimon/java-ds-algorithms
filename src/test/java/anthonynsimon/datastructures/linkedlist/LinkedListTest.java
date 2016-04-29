@@ -1,4 +1,4 @@
-package anthonynsimon.datastructures.linkedlist;
+package anthonynsimon.datastructures;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

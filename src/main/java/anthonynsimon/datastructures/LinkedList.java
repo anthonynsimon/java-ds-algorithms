@@ -1,6 +1,4 @@
-package anthonynsimon.datastructures.linkedlist;
-
-import anthonynsimon.datastructures.common.SinglyNode;
+package anthonynsimon.datastructures;
 
 public class LinkedList<E> {
   
