@@ -42,15 +42,15 @@ public class ListPalindromeCheckerTest {
     ListPalindromeChecker<String> classUnderTest = new ListPalindromeChecker<>();
     
     classUnderTest.append("a");
-    classUnderTest.append("5");
+    classUnderTest.append("b");
     classUnderTest.append("a");
     
     assertTrue(classUnderTest.isPalindrome());
     
     classUnderTest.clear();
     classUnderTest.append("a");
-    classUnderTest.append("a");
     classUnderTest.append("b");
+    classUnderTest.append("c");
     
     assertFalse(classUnderTest.isPalindrome());
   }
@@ -75,8 +75,9 @@ public class ListPalindromeCheckerTest {
     classUnderTest.append("a");
     classUnderTest.append("t");
     classUnderTest.append("t");
+    classUnderTest.append("a");
     classUnderTest.append("5");
-    classUnderTest.append("x");
+    classUnderTest.append("5");
     
     assertFalse(classUnderTest.isPalindrome());
   }
