@@ -4,63 +4,71 @@ import anthonynsimon.datastructures.SinglyNode;
 
 public class ListIntersection<E> {
   
+  // Helper class for finding last node of list while counting
+  // the number of nodes touched
+  class Result<E> {
+    SinglyNode<E> node;
+    int size;
+    public Result(SinglyNode<E> node, int size) {
+      this.node = node;
+      this.size = size;
+    }
+  }
+  
   // Returns the node where two singly linked lists intersect, if any
   // Time complexity O(N + M), space: O(1)
   public SinglyNode<E> getIntersectionNode(SinglyNode<E> headListA, SinglyNode<E> headListB) {
-    // Each list should have at least one node to intersect
+    // Each list should have at least one node
     if (headListA == null || headListB == null) {
         return null;
     }
     
-    SinglyNode<E> pointerA = headListA;
-    SinglyNode<E> pointerB = headListB;
-    
-    int lenA = 1;
-    int lenB = 1;
-    
-    // Find last node of each and count
-    while (pointerA.getNext() != null) {
-        pointerA = pointerA.getNext();
-        lenA++;
-    }
-    
-    while (pointerB.getNext() != null) {
-        pointerB = pointerB.getNext();
-        lenB++;
-    }
+    // Traverse both lists to get last node and count
+    Result resultA = getLastNodeAndSize(headListA);
+    Result resultB = getLastNodeAndSize(headListB);
     
     // Return null if last nodes don't match (lists don't intersect)
-    if (pointerA != pointerB) {
+    if (resultA.node != resultB.node) {
         return null;
     }
     
-    // Find which list is longer and pick head of that
-    SinglyNode<E> longerListHead = lenA > lenB ? headListA : headListB;
-    SinglyNode<E> shorterListHead = lenA > lenB ? headListB : headListA;
+    // Find which list is longer and which is shorter
+    SinglyNode<E> longer = resultA.size > resultB.size ? headListA : headListB;
+    SinglyNode<E> shorter = resultA.size > resultB.size ? headListB : headListA;
     
     // Calculate the difference in list length for the offset
-    int lengthDiff = Math.abs(lenA - lenB);
+    int difference = Math.abs(resultA.size - resultB.size);
     
     // Offset the longer list pointer
-    while (lengthDiff > 0) {
-        longerListHead = longerListHead.getNext();
-        lengthDiff--;
+    while (difference > 0) {
+        longer = longer.getNext();
+        difference--;
     }
     
-    // Move the pointers to where both lists have the same number
-    // of remaining nodes
-    pointerA = longerListHead;
-    pointerB = shorterListHead;
-    
+    // Now both pointers have the same number of next nodes
     // Move through the lists until intersection is found
-    while (pointerA != null) {
-        if (pointerA == pointerB) {
-            return pointerA;
-        }
-        pointerA = pointerA.getNext();
-        pointerB = pointerB.getNext();
+    while (longer != shorter) {
+      longer = longer.getNext();
+      shorter = shorter.getNext();
     }
-
-    return null;
+    
+    return longer;
+  }
+  
+  // Traverses the list until last node is found while counting
+  // the number of nodes touched
+  private Result getLastNodeAndSize(SinglyNode<E> start) {
+    if (start == null) {
+      return new Result(null, 0);
+    }
+    
+    int size = 1;
+    SinglyNode<E> current = start;
+    while (current.getNext() != null) {
+      current = current.getNext();
+      size++;
+    }
+    
+    return new Result(current, size);
   }
 }
