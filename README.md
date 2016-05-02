@@ -24,6 +24,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Find Kth to last element (unkown list size)](/src/main/java/anthonynsimon/algorithms/lists/FindKthToLast.java)
 - [Partition list in place](/src/main/java/anthonynsimon/algorithms/lists/PartitionList.java)
 - [Check if list is palindrome](/src/main/java/anthonynsimon/algorithms/lists/ListPalindromeChecker.java)
+- [Find intersection of two lists](/src/main/java/anthonynsimon/algorithms/lists/ListIntersection.java)
 
 ## Data Structures:
 - [Singly Linked List](/src/main/java/anthonynsimon/datastructures/LinkedList.java)
