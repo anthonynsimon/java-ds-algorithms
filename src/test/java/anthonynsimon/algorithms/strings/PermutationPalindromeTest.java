@@ -15,10 +15,6 @@ public class PermutationPalindromeTest {
   @Test
   public void testStringsWithPalindromeBruteForce() {
     String[] testStrings = {
-      /* First two omitted, would take too long on brute force
-      * "a man, a plan, a canal, panama!",
-      * " a canal, a man, panama! a ,plan.",
-      */
       "taco cat",
       "atcc o.ta",
       "aabbcc",
