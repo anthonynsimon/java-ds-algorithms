@@ -5,26 +5,47 @@ import java.util.HashSet;
 
 public class ListLoopChecker<E> {
   
+  // Returns the node where a loop starts, and null if no loop was found 
+  // Time complexity O(N), space complexity O(1)
   public SinglyNode<E> listHasLoopAt(SinglyNode<E> head) {
-    HashSet<SinglyNode<E>> seenNodes = new HashSet<>();
-    SinglyNode<E> current = head;
+    SinglyNode<E> fast = head;
+    SinglyNode<E> slow = head;
     
-    // Traverse the list
-    while (current != null) {
-      // If node has already been seen (reference), then this is
-      // the start of the loop
-      if (seenNodes.contains(current)) {
-        return current;
+    int index = 0;
+    while (true) {
+      
+      if (fast == null) {
+        return null;
       }
       
-      // If this is the first time seen the node, then add to 
-      // seen nodes and keep moving
-      seenNodes.add(current);
-      current = current.getNext();
+      // Move the fast pointer on each iteration
+      fast = fast.getNext();
+      
+      // Move the slow pointer every other iteration
+      if (index % 2 == 1) {
+        slow = slow.getNext();
+        
+        // Every time the slow pointer moves,
+        // check to see if they meet and break the while loop if so
+        if (fast == slow) {
+          break;
+        }
+      }
+      
+      index++;
     }
     
-    // If we got out of the loop then we reached the end of 
-    // the linked list and so there is no loop
-    return current;
+    // At this point we know that the list has a loop    
+    // Move the fast pointer to the head
+    fast = head;
+    
+    // Move them at the same speed until they meet,
+    // the meeting point is the start of the loop
+    while (fast != slow) {
+      fast = fast.getNext();
+      slow = slow.getNext();
+    }
+    
+    return fast;
   }
 }
