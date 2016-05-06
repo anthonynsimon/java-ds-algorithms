@@ -32,3 +32,4 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Stack](/src/main/java/anthonynsimon/datastructures/Stack.java)
 - [Queue](/src/main/java/anthonynsimon/datastructures/Queue.java)
 - [Dynamic Array](/src/main/java/anthonynsimon/datastructures/DynamicArray.java)
+- [Multi Stack in Array](/src/main/java/anthonynsimon/datastructures/MultiStackArray.java)
