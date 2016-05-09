@@ -15,13 +15,16 @@ public class Stack<E> {
   }
   
   public E peek() {
-    return this.top != null ? this.top.getData() : null;
+    if (isEmpty()) {
+      throw new IndexOutOfBoundsException("Stack is empty");
+    }
+    return this.top.getData();
   }
   
   public void push(E data) {
     SinglyNode<E> newNode = new SinglyNode<E>(data);
     
-    if (this.top == null) {
+    if (isEmpty()) {
       this.top = newNode;
     }
     else {
@@ -33,8 +36,8 @@ public class Stack<E> {
   }
   
   public E pop() {
-    if (size() == 0) {
-      return null;
+    if (isEmpty()) {
+      throw new IndexOutOfBoundsException("Stack is empty");
     }
     
     E data = this.top.getData();
@@ -47,5 +50,9 @@ public class Stack<E> {
   public void clear() {
     this.top = null;
     this.size = 0;
+  }
+  
+  public boolean isEmpty() {
+    return size() == 0;
   }
 }

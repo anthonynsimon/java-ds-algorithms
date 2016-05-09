@@ -7,10 +7,12 @@ public class StackTest {
   
   private Stack<String> classUnderTest = new Stack<>();
   
-  @Test
+  @Test(expected=IndexOutOfBoundsException.class)
   public void testEmptyStack() {
     assertEquals(classUnderTest.size(), 0);
-    assertEquals(classUnderTest.pop(), null);
+    
+    // Pop empty stack, will throw exception
+    classUnderTest.pop();
   }
   
   @Test
@@ -22,20 +24,19 @@ public class StackTest {
     classUnderTest.push("hello");
     
     assertEquals(classUnderTest.size(), 2);
-
   }
   
-  @Test
+  @Test(expected=IndexOutOfBoundsException.class)
   public void testPoppingElements() {
     classUnderTest.push("there");    
     classUnderTest.push("hello");
     
     assertEquals(classUnderTest.pop(), "hello");  
     assertEquals(classUnderTest.pop(), "there");  
-    assertEquals(classUnderTest.pop(), null);  
+    classUnderTest.pop();  
   }
   
-  @Test
+  @Test(expected=IndexOutOfBoundsException.class)
   public void testPeeking() {
     classUnderTest.clear();
     classUnderTest.push("some");    
@@ -47,9 +48,11 @@ public class StackTest {
     
     assertEquals(classUnderTest.peek(), "some");
     
+    // Pop last element
     classUnderTest.pop(); 
     
-    assertEquals(classUnderTest.peek(), null);
+    // Peek empty stack, will throw exception
+    classUnderTest.peek();
   }
   
   @Test
