@@ -1,5 +1,7 @@
 package anthonynsimon.datastructures;
 
+import java.util.EmptyStackException;
+
 public class Stack<E> {
   
   protected int size;
@@ -16,7 +18,7 @@ public class Stack<E> {
   
   public E peek() {
     if (isEmpty()) {
-      throw new IndexOutOfBoundsException("Stack is empty");
+      throw new EmptyStackException();
     }
     return this.top.getData();
   }
@@ -37,7 +39,7 @@ public class Stack<E> {
   
   public E pop() {
     if (isEmpty()) {
-      throw new IndexOutOfBoundsException("Stack is empty");
+      throw new EmptyStackException();
     }
     
     E data = this.top.getData();

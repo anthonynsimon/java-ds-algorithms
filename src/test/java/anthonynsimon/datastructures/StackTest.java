@@ -3,11 +3,13 @@ package anthonynsimon.datastructures;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.EmptyStackException;
+
 public class StackTest {
   
   private Stack<String> classUnderTest = new Stack<>();
   
-  @Test(expected=IndexOutOfBoundsException.class)
+  @Test(expected=EmptyStackException.class)
   public void testEmptyStack() {
     assertEquals(classUnderTest.size(), 0);
     
@@ -26,7 +28,7 @@ public class StackTest {
     assertEquals(classUnderTest.size(), 2);
   }
   
-  @Test(expected=IndexOutOfBoundsException.class)
+  @Test(expected=EmptyStackException.class)
   public void testPoppingElements() {
     classUnderTest.push("there");    
     classUnderTest.push("hello");
@@ -36,7 +38,7 @@ public class StackTest {
     classUnderTest.pop();  
   }
   
-  @Test(expected=IndexOutOfBoundsException.class)
+  @Test(expected=EmptyStackException.class)
   public void testPeeking() {
     classUnderTest.clear();
     classUnderTest.push("some");    
