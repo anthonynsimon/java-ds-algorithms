@@ -8,6 +8,9 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [In-place matrix rotation](/src/main/java/anthonynsimon/algorithms/arrays/MatrixRotation.java)
 - [Nullify rows and columns in matrix](/src/main/java/anthonynsimon/algorithms/arrays/NullifyMatrix.java)
 
+### Stacks and Queues
+- [Find minimum value in Stack](/src/main/java/anthonynsimon/algorithms/stacksqueues/MinStack.java)
+
 ### Strings
 - [String has unique characters](/src/main/java/anthonynsimon/algorithms/strings/UniqueCharacters.java)
 - [Check if string is permutation of another](/src/main/java/anthonynsimon/algorithms/strings/PermutationMatch.java)
