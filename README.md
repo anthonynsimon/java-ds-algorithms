@@ -10,6 +10,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 
 ### Stacks and Queues
 - [Find minimum value in Stack](/src/main/java/anthonynsimon/algorithms/stacksqueues/MinStack.java)
+- [Stack of Stacks](/src/main/java/anthonynsimon/algorithms/stacksqueues/StackOfStacks.java)
 
 ### Strings
 - [String has unique characters](/src/main/java/anthonynsimon/algorithms/strings/UniqueCharacters.java)
