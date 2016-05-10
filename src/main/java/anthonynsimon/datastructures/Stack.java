@@ -57,4 +57,27 @@ public class Stack<E> {
   public boolean isEmpty() {
     return size() == 0;
   }
+  
+  public String toString() {
+    return toString("");
+  }
+  
+  public String toString(String glue) {
+    StringBuilder sb = new StringBuilder();
+    
+    SinglyNode<E> current = this.top;
+    
+    while (current != null) {
+      sb.append(current.getData());
+      
+      current = current.getNext();
+      
+      // If we are done traversing, don't add the glue string
+      if (current != null) {
+        sb.append(glue);
+      }
+    }
+    
+    return sb.toString();
+  }
 }

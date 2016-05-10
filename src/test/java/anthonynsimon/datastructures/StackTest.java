@@ -38,6 +38,19 @@ public class StackTest {
     classUnderTest.pop();  
   }
   
+  @Test
+  public void testToString() {
+    classUnderTest.push("you");
+    classUnderTest.push("there");    
+    classUnderTest.push("hello");
+    
+    assertEquals(classUnderTest.toString(", "), "hello, there, you");
+    
+    classUnderTest.push("hola!, ");
+    
+    assertEquals(classUnderTest.toString(), "hola!, hellothereyou");  
+  }
+  
   @Test(expected=EmptyStackException.class)
   public void testPeeking() {
     classUnderTest.clear();
