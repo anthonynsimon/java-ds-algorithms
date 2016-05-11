@@ -1,13 +1,18 @@
 package anthonynsimon.datastructures;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 import java.util.EmptyStackException;
 
 public class StackTest {
   
-  private Stack<String> classUnderTest = new Stack<>();
+  private Stack<String> classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new Stack<>();
+  }
   
   @Test(expected=EmptyStackException.class)
   public void testEmptyStack() {

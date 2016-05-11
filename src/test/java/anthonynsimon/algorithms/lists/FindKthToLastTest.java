@@ -1,15 +1,32 @@
 package anthonynsimon.algorithms.lists;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class FindKthToLastTest {
+  
+  private FindKthToLast<String> classUnderTest;
+  private String[] emptyData;
+  private String[] data;
+  
+  @Before
+  public void setUp() {
+    classUnderTest = new FindKthToLast<>();
+    
+    emptyData = new String[]{};
+    
+    data = new String[]{
+      "ab",
+      "cd",
+      "ef",
+      "gh"
+    };
+    
+  }
     
   @Test
   public void testEmpty() {
-    FindKthToLast<String> classUnderTest = new FindKthToLast<>();
-    String[] data = {};
-    classUnderTest.build(data);
+    classUnderTest.build(emptyData);
     
     assertEquals(classUnderTest.findKthToLast(-1), null);    
     assertEquals(classUnderTest.findKthToLast(5), null);    
@@ -17,16 +34,7 @@ public class FindKthToLastTest {
   }
   
   @Test
-  public void testNotLongEnough() {
-    FindKthToLast<String> classUnderTest = new FindKthToLast<>();
-    
-    String[] data = {
-      "ab",
-      "cd",
-      "ef",
-      "gh"
-    };
-    
+  public void testNotLongEnough() {    
     classUnderTest.build(data);
     
     assertEquals(classUnderTest.findKthToLast(4), null);
@@ -35,15 +43,6 @@ public class FindKthToLastTest {
   
   @Test
   public void testFindKthToLast() {
-    FindKthToLast<String> classUnderTest = new FindKthToLast<>();
-    
-    String[] data = {
-      "ab",
-      "cd",
-      "ef",
-      "gh"
-    };
-    
     classUnderTest.build(data);
     
     assertEquals(classUnderTest.findKthToLast(2), "cd");

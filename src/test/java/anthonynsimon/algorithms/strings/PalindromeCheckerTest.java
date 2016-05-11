@@ -1,9 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class PalindromeCheckerTest {
+  
+  private PalindromeChecker classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new PalindromeChecker();
+  }
   
   @Test
   public void testCorrectPalindrome() {
@@ -16,7 +23,7 @@ public class PalindromeCheckerTest {
     };
     
     for (String p : palindromes) {
-      assertTrue(PalindromeChecker.isPalindrome(p));
+      assertTrue(classUnderTest.isPalindrome(p));
     }
   }
   
@@ -32,7 +39,7 @@ public class PalindromeCheckerTest {
     char[] blacklist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
     
     for (String p : palindromes) {
-      assertTrue(PalindromeChecker.isPalindrome(p, blacklist));
+      assertTrue(classUnderTest.isPalindrome(p, blacklist));
     }
   }
   
@@ -46,7 +53,7 @@ public class PalindromeCheckerTest {
     char[] blacklist = {',', '-', '!', '.', ' ', ';', '\'', ':', '"', '?'};
     
     for (String p : palindromes) {
-      assertTrue(PalindromeChecker.isPalindromeIgnoreCase(p, blacklist));
+      assertTrue(classUnderTest.isPalindromeIgnoreCase(p, blacklist));
     }
   }
   
@@ -64,7 +71,7 @@ public class PalindromeCheckerTest {
     };
     
     for (String p : palindromes) {
-      assertFalse(PalindromeChecker.isPalindrome(p));
+      assertFalse(classUnderTest.isPalindrome(p));
     }
   }
 }

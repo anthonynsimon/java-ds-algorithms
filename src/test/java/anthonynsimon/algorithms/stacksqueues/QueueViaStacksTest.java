@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.stacksqueues;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class QueueViaStacksTest {
   
-  private QueueViaStacks<String> classUnderTest = new QueueViaStacks<>();
+  private QueueViaStacks<String> classUnderTest;
+    
+  @Before 
+  public void setUp() {
+    classUnderTest = new QueueViaStacks<>();
+  }
   
   @Test
   public void testEmptyPeek() {

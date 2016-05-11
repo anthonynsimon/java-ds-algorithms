@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.arrays;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class MatrixRotationTest {
   
-  private MatrixRotation classUnderTest = new MatrixRotation();
+  private MatrixRotation classUnderTest;
+  
+  @Before
+  public void setUp() {
+    classUnderTest = new MatrixRotation();
+  }
   
   @Test
   public void testRotateSimple() {

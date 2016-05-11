@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class PermutationMatchTest {
   
-  private PermutationMatch classUnderTest = new PermutationMatch();
+  private PermutationMatch classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new PermutationMatch();
+  }
   
   @Test
   public void testIsPermutation() {

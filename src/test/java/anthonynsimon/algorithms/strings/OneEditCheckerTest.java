@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class OneEditCheckerTest {
   
-  private OneEditChecker classUnderTest = new OneEditChecker();
+  private OneEditChecker classUnderTest;
+          
+  @Before 
+  public void setUp() {
+    classUnderTest = new OneEditChecker();
+  }
   
   @Test
   public void testIsEditsAway() {

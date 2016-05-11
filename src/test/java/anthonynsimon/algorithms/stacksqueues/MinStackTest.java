@@ -1,13 +1,18 @@
 package anthonynsimon.algorithms.stacksqueues;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.EmptyStackException;
 
 public class MinStackTest {
   
-  private MinStack classUnderTest = new MinStack();
+  private MinStack classUnderTest;
   
+  @Before 
+  public void setUp() {
+    classUnderTest = new MinStack();
+  }
+    
   @Test(expected=EmptyStackException.class)
   public void testEmpty() {
     assertEquals(classUnderTest.min(), Integer.MAX_VALUE);

@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class UrlifierTest {
   
-  private Urlifier classUnderTest = new Urlifier();
+  private Urlifier classUnderTest;
+    
+  @Before 
+  public void setUp() {
+    classUnderTest = new Urlifier();
+  }
   
   @Test
   public void testReplaceWhitespace() {

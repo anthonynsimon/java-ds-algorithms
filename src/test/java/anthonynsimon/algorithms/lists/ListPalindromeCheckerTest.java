@@ -1,30 +1,31 @@
 package anthonynsimon.algorithms.lists;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ListPalindromeCheckerTest {
+  
+  private ListPalindromeChecker<String> classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new ListPalindromeChecker<>();
+  }
     
   @Test
-  public void testEmpty() {
-    ListPalindromeChecker<String> classUnderTest = new ListPalindromeChecker<>();
-    
+  public void testEmpty() {    
     assertFalse(classUnderTest.isPalindrome());
   }
 
   @Test
-  public void testOneElement() {
-    ListPalindromeChecker<String> classUnderTest = new ListPalindromeChecker<>();
-    
+  public void testOneElement() {    
     classUnderTest.append("a");
     
     assertTrue(classUnderTest.isPalindrome());
   }
 
   @Test
-  public void testTwoElements() {
-    ListPalindromeChecker<String> classUnderTest = new ListPalindromeChecker<>();
-    
+  public void testTwoElements() {    
     classUnderTest.append("a");
     classUnderTest.append("a");
     
@@ -38,9 +39,7 @@ public class ListPalindromeCheckerTest {
   }
   
   @Test
-  public void testThreeElements() {
-    ListPalindromeChecker<String> classUnderTest = new ListPalindromeChecker<>();
-    
+  public void testThreeElements() {    
     classUnderTest.append("a");
     classUnderTest.append("b");
     classUnderTest.append("a");
@@ -56,9 +55,7 @@ public class ListPalindromeCheckerTest {
   }
   
   @Test
-  public void testManyElements() {
-    ListPalindromeChecker<String> classUnderTest = new ListPalindromeChecker<>();
-    
+  public void testManyElements() {    
     classUnderTest.append("x");
     classUnderTest.append("5");
     classUnderTest.append("a");

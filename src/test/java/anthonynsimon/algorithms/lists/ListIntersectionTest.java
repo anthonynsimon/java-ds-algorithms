@@ -2,15 +2,21 @@ package anthonynsimon.algorithms.lists;
 
 import anthonynsimon.datastructures.SinglyNode;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ListIntersectionTest {
   
+  private ListIntersection classUnderTest;
+  
+  @Before
+  public void setUp() {
+    classUnderTest = new ListIntersection();
+
+  }
+  
   @Test
   public void testOneListEmpty() {
-    ListIntersection classUnderTest = new ListIntersection();
-    
     SinglyNode<String> headA = null;
     SinglyNode<String> headB = new SinglyNode<>("a");
     
@@ -18,9 +24,7 @@ public class ListIntersectionTest {
   }
   
   @Test
-  public void testBothListsEmpty() {
-    ListIntersection classUnderTest = new ListIntersection();
-    
+  public void testBothListsEmpty() {   
     SinglyNode<String> headA = null;
     SinglyNode<String> headB = null;
     
@@ -28,9 +32,7 @@ public class ListIntersectionTest {
   }
   
   @Test
-  public void testOneElementNoIntersection() {
-    ListIntersection classUnderTest = new ListIntersection();
-    
+  public void testOneElementNoIntersection() {   
     SinglyNode<String> headA = new SinglyNode<>("a");
     SinglyNode<String> headB = new SinglyNode<>("a");
     
@@ -38,9 +40,7 @@ public class ListIntersectionTest {
   }
   
   @Test
-  public void testOneElementWithIntersection() {
-    ListIntersection classUnderTest = new ListIntersection();
-    
+  public void testOneElementWithIntersection() {    
     SinglyNode<String> headA = new SinglyNode<>("a");
     SinglyNode<String> headB = headA;
     
@@ -48,9 +48,7 @@ public class ListIntersectionTest {
   }
   
   @Test
-  public void testSameLengthWithIntersection() {
-    ListIntersection classUnderTest = new ListIntersection();
-    
+  public void testSameLengthWithIntersection() {    
     SinglyNode<String> headA = new SinglyNode<>("a");
     SinglyNode<String> headB = new SinglyNode<>("a");
     SinglyNode<String> intersection = new SinglyNode<>("b");
@@ -64,9 +62,7 @@ public class ListIntersectionTest {
   }
   
   @Test
-  public void testSameLengthNoIntersection() {
-    ListIntersection classUnderTest = new ListIntersection();
-    
+  public void testSameLengthNoIntersection() {    
     SinglyNode<String> headA = new SinglyNode<>("a");
     SinglyNode<String> headB = new SinglyNode<>("a");
     SinglyNode<String> nextA = new SinglyNode<>("b");
@@ -79,9 +75,7 @@ public class ListIntersectionTest {
   }
   
   @Test
-  public void testDifferentLengthNoIntersection() {
-    ListIntersection classUnderTest = new ListIntersection();
-    
+  public void testDifferentLengthNoIntersection() {    
     SinglyNode<String> headA = new SinglyNode<>("a");
     SinglyNode<String> headB = new SinglyNode<>("a");
     SinglyNode<String> nextA = new SinglyNode<>("b");
@@ -96,9 +90,7 @@ public class ListIntersectionTest {
   }
   
   @Test
-  public void testDifferentLengthWithIntersection() {
-    ListIntersection classUnderTest = new ListIntersection();
-    
+  public void testDifferentLengthWithIntersection() {    
     SinglyNode<String> headA = new SinglyNode<>("a");
     SinglyNode<String> headB = new SinglyNode<>("a");
     SinglyNode<String> nextA = new SinglyNode<>("b");

@@ -2,17 +2,22 @@ package anthonynsimon.algorithms.stacksqueues;
 
 import anthonynsimon.datastructures.Stack;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class StackSorterTest {
   
-  private StackSorter classUnderTest = new StackSorter();
+  private StackSorter classUnderTest;
+  private Stack<Integer> testStack;
+        
+  @Before 
+  public void setUp() {
+    classUnderTest = new StackSorter();
+    testStack = new Stack<>();
+  }
   
   @Test
-  public void testEmptyStack() {
-    Stack<Integer> testStack = new Stack<>();
-    
+  public void testEmptyStack() {    
     classUnderTest.sort(testStack);
     
     assertEquals(testStack.toString(), "");  
@@ -20,7 +25,6 @@ public class StackSorterTest {
   
   @Test
   public void testTwoElementsStack() {
-    Stack<Integer> testStack = new Stack<>();
     testStack.push(3);
     testStack.push(4);
     
@@ -37,7 +41,6 @@ public class StackSorterTest {
   
   @Test
   public void testSmallStack() {
-    Stack<Integer> testStack = new Stack<>();
     testStack.push(5);
     testStack.push(3);
     testStack.push(7);
@@ -52,7 +55,6 @@ public class StackSorterTest {
   
   @Test
   public void testLargerStack() {
-    Stack<Integer> testStack = new Stack<>();
     testStack.push(-5);
     testStack.push(5);
     testStack.push(0);

@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SinglyNodeTest {
-  
+    
   @Test
   public void testNodeInit() {
     SinglyNode<String> nodeWithValue = new SinglyNode<String>("test");
