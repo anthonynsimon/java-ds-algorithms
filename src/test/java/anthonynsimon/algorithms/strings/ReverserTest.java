@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ReverserTest {
 
-  private Reverser classUnderTest = new Reverser();
+  private Reverser classUnderTest;
+    
+  @Before 
+  public void setUp() {
+    classUnderTest = new Reverser();
+  }
   
   @Test
   public void testStringReversal() {

@@ -1,33 +1,36 @@
 package anthonynsimon.datastructures;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
   
+  private LinkedList<String> classUnderTest;
+      
+  @Before 
+  public void setUp() {
+    classUnderTest = new LinkedList<>();
+  }
+  
   @Test(expected=IndexOutOfBoundsException.class)
-  public void testOutOfBounds() {
-    LinkedList<String> list = new LinkedList<>();
+  public void testOutOfBounds() {    
+    classUnderTest.insert(10, "hey");
     
-    list.insert(10, "hey");
-    
-    assertEquals(list.get(0), null);
-    assertEquals(list.get(10), null);
-    assertEquals(list.get(-1), null);
+    assertEquals(classUnderTest.get(0), null);
+    assertEquals(classUnderTest.get(10), null);
+    assertEquals(classUnderTest.get(-1), null);
   }
   
   @Test
-  public void testEmptyList() {
-    LinkedList<String> list = new LinkedList<>();
-    
-    assertEquals(list.size(), 0);
-    assertFalse(list.contains("Hey"));
-    assertEquals(list.peek(), null);
-    assertEquals(list.size(), 0);
+  public void testEmptyList() {    
+    assertEquals(classUnderTest.size(), 0);
+    assertFalse(classUnderTest.contains("Hey"));
+    assertEquals(classUnderTest.peek(), null);
+    assertEquals(classUnderTest.size(), 0);
   }
   
   @Test
-  public void testListConstruction() {
+  public void testListConstructor() {
     LinkedList<String> list = new LinkedList<>("Hello there");
     assertEquals(list.size(), 1);
     assertTrue(list.contains("Hello there"));
@@ -46,271 +49,244 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testListBuild() {    
-    LinkedList<String> list = new LinkedList<>();
-    
-    list.build(new String[]{
+  public void testListBuild() {        
+    classUnderTest.build(new String[]{
       "hey",
       "you",
       "hey",
       "hey",
     });
     
-    assertEquals(list.size(), 4);
-    assertTrue(list.contains("you"));
+    assertEquals(classUnderTest.size(), 4);
+    assertTrue(classUnderTest.contains("you"));
     
-    list.build(new String[]{
+    classUnderTest.build(new String[]{
       "one",
       "two"
     });
     
-    assertEquals(list.size(), 2);
-    assertTrue(list.contains("two"));
-    assertFalse(list.contains("hey"));
+    assertEquals(classUnderTest.size(), 2);
+    assertTrue(classUnderTest.contains("two"));
+    assertFalse(classUnderTest.contains("hey"));
   }
   
   @Test
-  public void testOneElement() {
-    LinkedList<String> list = new LinkedList<>();
+  public void testOneElement() {    
+    classUnderTest.append("first");
     
-    list.append("first");
-    
-    assertEquals(list.size(), 1);
-    assertEquals(list.get(0), "first");
-    assertEquals(list.peek(), "first");
-    assertFalse(list.contains("Hey"));
-    assertTrue(list.contains("first"));
+    assertEquals(classUnderTest.size(), 1);
+    assertEquals(classUnderTest.get(0), "first");
+    assertEquals(classUnderTest.peek(), "first");
+    assertFalse(classUnderTest.contains("Hey"));
+    assertTrue(classUnderTest.contains("first"));
   }
 
   @Test
-  public void testAppendingElements() {
-    LinkedList<String> list = new LinkedList<>();
+  public void testAppendingElements() {    
+    classUnderTest.append("first");
+    classUnderTest.append("second");
+    classUnderTest.append("third");
     
-    list.append("first");
-    list.append("second");
-    list.append("third");
-    
-    assertEquals(list.size(), 3);
-    assertEquals(list.get(1), "second");
-    assertEquals(list.get(2), "third");
-    assertEquals(list.peek(), "first");
-    assertFalse(list.contains("Hey"));
-    assertTrue(list.contains("third"));
+    assertEquals(classUnderTest.size(), 3);
+    assertEquals(classUnderTest.get(1), "second");
+    assertEquals(classUnderTest.get(2), "third");
+    assertEquals(classUnderTest.peek(), "first");
+    assertFalse(classUnderTest.contains("Hey"));
+    assertTrue(classUnderTest.contains("third"));
   }
   
   @Test
-  public void testSettingElements() {
-    LinkedList<String> list = new LinkedList<>();
+  public void testSettingElements() {    
+    classUnderTest.append("uno");
+    classUnderTest.append("dos");
+    classUnderTest.append("tres");
+    classUnderTest.set(1, "two");
     
-    list.append("uno");
-    list.append("dos");
-    list.append("tres");
-    list.set(1, "two");
-    
-    assertEquals(list.size(), 3);
-    assertEquals(list.get(1), "two");
-    assertFalse(list.contains("dos"));
-    assertFalse(list.contains("dos"));
+    assertEquals(classUnderTest.size(), 3);
+    assertEquals(classUnderTest.get(1), "two");
+    assertFalse(classUnderTest.contains("dos"));
+    assertFalse(classUnderTest.contains("dos"));
   }
   
   @Test
-  public void testSimpleInsertion() {
-    LinkedList<String> list = new LinkedList<>();
+  public void testSimpleInsertion() {    
+    classUnderTest.append("uno");
+    classUnderTest.append("dos");
+    classUnderTest.append("tres");
+    classUnderTest.insert(1, "uno y medio");
     
-    list.append("uno");
-    list.append("dos");
-    list.append("tres");
-    list.insert(1, "uno y medio");
-    
-    assertEquals(list.size(), 4);
-    assertEquals(list.get(0), "uno");
-    assertEquals(list.get(1), "uno y medio");
-    assertEquals(list.get(2), "dos");
-    assertEquals(list.get(3), "tres");
+    assertEquals(classUnderTest.size(), 4);
+    assertEquals(classUnderTest.get(0), "uno");
+    assertEquals(classUnderTest.get(1), "uno y medio");
+    assertEquals(classUnderTest.get(2), "dos");
+    assertEquals(classUnderTest.get(3), "tres");
   }
   
   @Test
-  public void testInsertAsFirst() {    
-    LinkedList<String> list = new LinkedList<>();
+  public void testInsertAsFirst() {        
+    classUnderTest.append("one");
+    classUnderTest.insert(0, "two");
     
-    list.append("one");
-    list.insert(0, "two");
-    
-    assertEquals(list.size(), 2);
-    assertEquals(list.get(0), "two");
-    assertEquals(list.get(1), "one");
+    assertEquals(classUnderTest.size(), 2);
+    assertEquals(classUnderTest.get(0), "two");
+    assertEquals(classUnderTest.get(1), "one");
   }
   
   @Test(expected=IndexOutOfBoundsException.class)
-  public void testInsertOutOfRange() {    
-    LinkedList<String> list = new LinkedList<>();    
-    list.append("one");
+  public void testInsertOutOfRange() {       
+    classUnderTest.append("one");
     
-    list.insert(1, "two");
+    classUnderTest.insert(1, "two");
         
-    assertEquals(list.size(), 1);
-    assertEquals(list.get(0), "one");
-    assertEquals(list.get(1), null);
+    assertEquals(classUnderTest.size(), 1);
+    assertEquals(classUnderTest.get(0), "one");
+    assertEquals(classUnderTest.get(1), null);
   }
   
   @Test
-  public void testRemoveElement() {    
-    LinkedList<String> list = new LinkedList<>();
-     
+  public void testRemoveElement() {         
     // Remove from list of 1 element
-    list.append("one");
-    list.remove(0);
+    classUnderTest.append("one");
+    classUnderTest.remove(0);
     
-    assertEquals(list.size(), 0);
-    assertEquals(list.peek(), null);
+    assertEquals(classUnderTest.size(), 0);
+    assertEquals(classUnderTest.peek(), null);
 
-    list.append("one");
-    list.append("two");
-    list.append("three");
-    list.append("four");
+    classUnderTest.append("one");
+    classUnderTest.append("two");
+    classUnderTest.append("three");
+    classUnderTest.append("four");
     
-    assertEquals(list.size(), 4);
-    assertEquals(list.peek(), "one");
-    assertEquals(list.get(3), "four");
+    assertEquals(classUnderTest.size(), 4);
+    assertEquals(classUnderTest.peek(), "one");
+    assertEquals(classUnderTest.get(3), "four");
     
     // Remove head from list of 4 elements
-    list.remove(0); // => two -> three -> four
-    assertEquals(list.peek(), "two");
+    classUnderTest.remove(0); // => two -> three -> four
+    assertEquals(classUnderTest.peek(), "two");
     
     // Remove tail from list of 3 elements
-    list.remove(2);  // => two -> three
-    assertEquals(list.peek(), "two");
-    assertEquals(list.get(1), "three");
-    assertEquals(list.size(), 2);
-    assertFalse(list.contains("four"));
+    classUnderTest.remove(2);  // => two -> three
+    assertEquals(classUnderTest.peek(), "two");
+    assertEquals(classUnderTest.get(1), "three");
+    assertEquals(classUnderTest.size(), 2);
+    assertFalse(classUnderTest.contains("four"));
     
-    list.insert(1, "two and a half");
-    list.insert(0, "one");
+    classUnderTest.insert(1, "two and a half");
+    classUnderTest.insert(0, "one");
     
-    assertEquals(list.get(2), "two and a half");
+    assertEquals(classUnderTest.get(2), "two and a half");
 
     // Remove middle element from list of 4 elements
-    assertEquals(list.size(), 4);
-    list.remove(2);
-    assertEquals(list.size(), 3);
+    assertEquals(classUnderTest.size(), 4);
+    classUnderTest.remove(2);
+    assertEquals(classUnderTest.size(), 3);
     
-    assertEquals(list.get(1), "two");
-    assertEquals(list.get(2), "three");
+    assertEquals(classUnderTest.get(1), "two");
+    assertEquals(classUnderTest.get(2), "three");
     
     // Remove middle element from list of 3 elements
-    list.remove(1);
+    classUnderTest.remove(1);
     
-    assertEquals(list.peek(), "one");
-    assertEquals(list.get(1), "three");
+    assertEquals(classUnderTest.peek(), "one");
+    assertEquals(classUnderTest.get(1), "three");
     
-    assertEquals(list.size(), 2);
+    assertEquals(classUnderTest.size(), 2);
   }
   
   @Test(expected=IndexOutOfBoundsException.class)
-  public void testRemoveOutOfRange() {    
-    LinkedList<String> list = new LinkedList<>();
-    
-    list.append("you");
-    list.remove(-1);
+  public void testRemoveOutOfRange() {        
+    classUnderTest.append("you");
+    classUnderTest.remove(-1);
   }
   
   @Test
   public void testPop() {    
-    LinkedList<String> list = new LinkedList<>();
-
-    list.append("you");
-    list.insert(0, "hey");
-    list.append("dude");
+    classUnderTest.append("you");
+    classUnderTest.insert(0, "hey");
+    classUnderTest.append("dude");
     
-    assertEquals(list.size(), 3);
+    assertEquals(classUnderTest.size(), 3);
     
-    assertEquals(list.pop(), "dude");
-    assertEquals(list.pop(), "you");
-    assertEquals(list.pop(), "hey");
+    assertEquals(classUnderTest.pop(), "dude");
+    assertEquals(classUnderTest.pop(), "you");
+    assertEquals(classUnderTest.pop(), "hey");
     
-    assertEquals(list.size(), 0);
-    assertFalse(list.contains("hey"));
-    assertFalse(list.contains("you"));
-    assertFalse(list.contains("dude"));
+    assertEquals(classUnderTest.size(), 0);
+    assertFalse(classUnderTest.contains("hey"));
+    assertFalse(classUnderTest.contains("you"));
+    assertFalse(classUnderTest.contains("dude"));
     
-    assertEquals(list.pop(), null);
+    assertEquals(classUnderTest.pop(), null);
   }
   
   
   @Test
   public void testGetLast() {    
-    LinkedList<String> list = new LinkedList<>();
+    classUnderTest.append("you");
+    classUnderTest.insert(0, "hey");
+    classUnderTest.append("dude");
+    
+    assertEquals(classUnderTest.getLast(), "dude");
 
-    list.append("you");
-    list.insert(0, "hey");
-    list.append("dude");
+    classUnderTest.pop();
     
-    assertEquals(list.getLast(), "dude");
-
-    list.pop();
+    assertEquals(classUnderTest.getLast(), "you");
     
-    assertEquals(list.getLast(), "you");
+    classUnderTest.pop();
+    classUnderTest.pop();
+    classUnderTest.pop();
     
-    list.pop();
-    list.pop();
-    list.pop();
-    
-    assertEquals(list.getLast(), null);    
+    assertEquals(classUnderTest.getLast(), null);    
   }
   
   @Test
   public void testClear() {    
-    LinkedList<String> list = new LinkedList<>();
-
-    list.append("you");
-    list.insert(0, "hey");
-    list.append("dude");
-    list.append("dude");
-    list.append("dude");
-    list.append("dude");
-    list.append("dude");
+    classUnderTest.append("you");
+    classUnderTest.insert(0, "hey");
+    classUnderTest.append("dude");
+    classUnderTest.append("dude");
+    classUnderTest.append("dude");
+    classUnderTest.append("dude");
+    classUnderTest.append("dude");
     
-    assertEquals(list.size(), 7);
+    assertEquals(classUnderTest.size(), 7);
 
-    list.clear();
+    classUnderTest.clear();
     
-    assertEquals(list.size(), 0);
-    assertEquals(list.getLast(), null);
-    assertEquals(list.peek(), null);
+    assertEquals(classUnderTest.size(), 0);
+    assertEquals(classUnderTest.getLast(), null);
+    assertEquals(classUnderTest.peek(), null);
   }
   
   @Test
   public void testToArray() {    
-    LinkedList<String> list = new LinkedList<>();
-
-    list.append("you");
-    list.insert(0, "hey");
-    list.append("dude");
+    classUnderTest.append("you");
+    classUnderTest.insert(0, "hey");
+    classUnderTest.append("dude");
     
     String[] results1 = {"hey", "you", "dude"};
     
-    assertEquals(list.toArray(), results1);
+    assertEquals(classUnderTest.toArray(), results1);
 
-    list.clear();
+    classUnderTest.clear();
     
     String[] results2 = {};
     
-    assertEquals(list.toArray(), results2);
+    assertEquals(classUnderTest.toArray(), results2);
   }
   
   @Test
   public void testToString() {    
-    LinkedList<String> list = new LinkedList<>();
-
-    list.append("you");
-    list.insert(0, "hey");
-    list.append("dude");
+    classUnderTest.append("you");
+    classUnderTest.insert(0, "hey");
+    classUnderTest.append("dude");
         
-    assertEquals(list.toString(), "hey you dude");
-    assertEquals(list.toString("."), "hey.you.dude");
+    assertEquals(classUnderTest.toString(), "hey you dude");
+    assertEquals(classUnderTest.toString("."), "hey.you.dude");
 
-    list.clear();
+    classUnderTest.clear();
     
-    assertEquals(list.toString(), "");
+    assertEquals(classUnderTest.toString(), "");
   }
 }

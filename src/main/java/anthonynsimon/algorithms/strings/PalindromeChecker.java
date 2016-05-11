@@ -2,7 +2,11 @@ package anthonynsimon.algorithms.strings;
 
 public class PalindromeChecker {
   
-  public static boolean isPalindrome(String str) {
+  public PalindromeChecker() {
+    
+  }
+  
+  public boolean isPalindrome(String str) {
     int strLength = str.length();
     
     for (int i = 0; i < strLength/2; i++) {
@@ -14,14 +18,14 @@ public class PalindromeChecker {
     return true;
   }
   
-  public static boolean isPalindrome(String str, char[] omittableChars) {
+  public boolean isPalindrome(String str, char[] omittableChars) {
     Sanitizer sanitizer = new Sanitizer();
     str = sanitizer.sanitize(str, omittableChars);    
     
     return isPalindrome(str);
   }
   
-  public static boolean isPalindromeIgnoreCase(String str, char[] omittableChars) {
+  public boolean isPalindromeIgnoreCase(String str, char[] omittableChars) {
     Sanitizer sanitizer = new Sanitizer();
     str = sanitizer.sanitize(str, omittableChars);
 

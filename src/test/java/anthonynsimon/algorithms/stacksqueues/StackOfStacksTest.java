@@ -1,12 +1,17 @@
 package anthonynsimon.algorithms.stacksqueues;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.EmptyStackException;
 
 public class StackOfStacksTest {
   
-  private StackOfStacks<String> classUnderTest = new StackOfStacks<>(4);
+  private StackOfStacks<String> classUnderTest;
+      
+  @Before 
+  public void setUp() {
+    classUnderTest = new StackOfStacks<>(4);
+  }
   
   @Test(expected=EmptyStackException.class)
   public void testEmptyStack() {

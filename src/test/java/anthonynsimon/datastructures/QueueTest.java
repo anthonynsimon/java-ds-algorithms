@@ -1,47 +1,52 @@
 package anthonynsimon.datastructures;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class QueueTest {
   
-  private Queue<String> queue = new Queue<>();
+  private Queue<String> classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new Queue<>();
+  }
   
   @Test
   public void testEmptyQueue() {
-    assertEquals(queue.dequeue(), null);
-    assertEquals(queue.size(), 0);
+    assertEquals(classUnderTest.dequeue(), null);
+    assertEquals(classUnderTest.size(), 0);
   }
   
   @Test
   public void testEnqueue() {
-    queue.enqueue("this");
+    classUnderTest.enqueue("this");
     
-    assertEquals(queue.size(), 1);
+    assertEquals(classUnderTest.size(), 1);
     
-    queue.enqueue("that");
-    assertEquals(queue.size(), 2);
+    classUnderTest.enqueue("that");
+    assertEquals(classUnderTest.size(), 2);
   }
   
   @Test
   public void testDequeue() {
-    queue.clear();
-    queue.enqueue("one");
-    queue.enqueue("two");
+    classUnderTest.clear();
+    classUnderTest.enqueue("one");
+    classUnderTest.enqueue("two");
     
-    assertEquals(queue.dequeue(), "one");
-    assertEquals(queue.dequeue(), "two");
+    assertEquals(classUnderTest.dequeue(), "one");
+    assertEquals(classUnderTest.dequeue(), "two");
     
-    assertEquals(queue.size(), 0);
+    assertEquals(classUnderTest.size(), 0);
   }
   
   @Test
   public void testClear() {
-    queue.enqueue("this");
-    queue.enqueue("that");
+    classUnderTest.enqueue("this");
+    classUnderTest.enqueue("that");
     
-    queue.clear();
-    assertEquals(queue.size(), 0);
-    assertEquals(queue.dequeue(), null);
+    classUnderTest.clear();
+    assertEquals(classUnderTest.size(), 0);
+    assertEquals(classUnderTest.dequeue(), null);
   }
 }

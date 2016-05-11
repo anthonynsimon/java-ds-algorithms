@@ -1,14 +1,19 @@
 package anthonynsimon.algorithms.lists;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class PartitionListTest {
   
+  private PartitionList classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new PartitionList();
+  }
+  
   @Test
-  public void testOneElement() {
-    PartitionList classUnderTest = new PartitionList();
-    
+  public void testOneElement() {    
     Node head = new Node(7);
   
     head = classUnderTest.partition(head, 5);
@@ -18,9 +23,7 @@ public class PartitionListTest {
   }
   
   @Test
-  public void testNoPartion() {
-    PartitionList classUnderTest = new PartitionList();
-    
+  public void testNoPartion() {    
     int[] values = {7, 3, 5, 8, 1};
     
     Node head = new Node(values[0]);
@@ -41,9 +44,7 @@ public class PartitionListTest {
   }
 
   @Test
-  public void testPartition() {
-    PartitionList classUnderTest = new PartitionList();
-    
+  public void testPartition() {    
     int[] values = {7, 3, 5, 8, 1};
     int[] expected = {1, 3, 7, 5, 8};
 

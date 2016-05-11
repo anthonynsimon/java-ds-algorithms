@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class UniqueCharactersTest {
   
-  private UniqueCharacters classUnderTest = new UniqueCharacters();
+  private UniqueCharacters classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new UniqueCharacters();
+  }
   
   @Test
   public void testHasUniqueChars() {

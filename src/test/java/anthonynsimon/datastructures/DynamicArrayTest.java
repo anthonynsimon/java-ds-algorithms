@@ -1,11 +1,16 @@
 package anthonynsimon.datastructures;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class DynamicArrayTest {
   
-  private DynamicArray<String> classUnderTest = new DynamicArray<>(4);
+  private DynamicArray<String> classUnderTest;
+      
+  @Before 
+  public void setUp() {
+    classUnderTest = new DynamicArray<>(4);
+  }
   
   @Test
   public void testEmpty() {

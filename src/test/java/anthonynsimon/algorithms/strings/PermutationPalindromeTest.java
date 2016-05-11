@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class PermutationPalindromeTest {
   
-  private PermutationPalindrome classUnderTest = new PermutationPalindrome();
+  private PermutationPalindrome classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new PermutationPalindrome();
+  }
   
   @Test
   public void testEmptyString() {

@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.arrays;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class NullifyMatrixTest {
   
-  private NullifyMatrix classUnderTest = new NullifyMatrix();
+  private NullifyMatrix classUnderTest;
+  
+  @Before
+  public void setUp() {
+    classUnderTest = new NullifyMatrix();
+  }
   
   @Test
   public void testSmallMatrix() {

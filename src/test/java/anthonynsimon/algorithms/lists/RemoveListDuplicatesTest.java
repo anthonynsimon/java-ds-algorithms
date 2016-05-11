@@ -1,14 +1,19 @@
 package anthonynsimon.algorithms.lists;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class RemoveListDuplicatesTest {
+  
+  private RemoveListDuplicates<String> classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new RemoveListDuplicates<>();
+  }
     
   @Test
-  public void testStrings() {
-    RemoveListDuplicates<String> list = new RemoveListDuplicates<>();
-    
+  public void testStrings() {    
     String[] data = new String[]{
       "this",
       "that",
@@ -32,9 +37,9 @@ public class RemoveListDuplicatesTest {
       "This"
     };
     
-    list.build(data);
-    list.removeDuplicates();
+    classUnderTest.build(data);
+    classUnderTest.removeDuplicates();
     
-    assertEquals(list.toArray(), expectedResult);
+    assertEquals(classUnderTest.toArray(), expectedResult);
   }
 }

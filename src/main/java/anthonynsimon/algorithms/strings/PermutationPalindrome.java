@@ -2,6 +2,12 @@ package anthonynsimon.algorithms.strings;
 
 public class PermutationPalindrome {
   
+  private PalindromeChecker palindromeChecker;
+  
+  public PermutationPalindrome() {
+    this.palindromeChecker = new PalindromeChecker();
+  }
+  
   // Optimized solution
   public boolean isPermutationOfPalindrome(String str) {
     // Remove punctuation, whitespace, make all lowercase...
@@ -58,7 +64,7 @@ public class PermutationPalindrome {
     
     // If we reached base case, check if it's palindrome
     if (strLength == 0) {
-      if (PalindromeChecker.isPalindrome(prefix)) {
+      if (this.palindromeChecker.isPalindrome(prefix)) {
         return true;
       }
       return false;

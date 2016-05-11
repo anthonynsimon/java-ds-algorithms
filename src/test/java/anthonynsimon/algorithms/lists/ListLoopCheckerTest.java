@@ -2,12 +2,17 @@ package anthonynsimon.algorithms.lists;
 
 import anthonynsimon.datastructures.SinglyNode;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ListLoopCheckerTest {
   
-  private ListLoopChecker<String> classUnderTest = new ListLoopChecker<>();
+  private ListLoopChecker<String> classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new ListLoopChecker<>();
+  }
   
   @Test
   public void testEmptyList() {

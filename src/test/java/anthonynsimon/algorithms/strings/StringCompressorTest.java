@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class StringCompressorTest {
   
-  private StringCompressor classUnderTest = new StringCompressor();
+  private StringCompressor classUnderTest;
+  
+  @Before 
+  public void setUp() {
+    classUnderTest = new StringCompressor();
+  }
   
   @Test
   public void testEmptyString() {

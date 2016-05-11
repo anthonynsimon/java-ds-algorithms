@@ -1,11 +1,16 @@
 package anthonynsimon.algorithms.strings;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class SanitizerTest {
 
-  private Sanitizer classUnderTest = new Sanitizer();
+  private Sanitizer classUnderTest;
+      
+  @Before 
+  public void setUp() {
+    classUnderTest = new Sanitizer();
+  }
   
   @Test
   public void testSanitizer() {
