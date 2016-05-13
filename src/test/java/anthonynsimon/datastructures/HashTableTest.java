@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 import java.util.Random;
 import java.util.UUID;
+import java.util.Arrays;
 
 public class HashTableTest {
   
@@ -53,16 +54,36 @@ public class HashTableTest {
     assertEquals(classUnderTest.size(), size);
   }
   
-  // TODO(anthonynsimon)
   @Test
   public void testKeys() {
+    classUnderTest.clear();
+    assertEquals(classUnderTest.keys(), new Object[]{});
     
+    classUnderTest.put("what", "there");
+    
+    assertTrue(classUnderTest.keys()[0] == "what");
+    
+    classUnderTest.put("that", "there");
+    classUnderTest.put("this", "there");
+    classUnderTest.put(452, "there");
+    
+    assertTrue(classUnderTest.keys().length == 4);
   }
   
-  // TODO(anthonynsimon)
   @Test
   public void testValues() {
-
+    classUnderTest.clear();
+    assertEquals(classUnderTest.values(), new Object[]{});
+    
+    classUnderTest.put("what", "some");
+    
+    assertTrue(classUnderTest.values()[0] == "some");
+    
+    classUnderTest.put("that", "things");
+    classUnderTest.put("this", "are");
+    classUnderTest.put(452, "there");
+    
+    assertTrue(classUnderTest.values().length == 4);
   }
   
   @Test 
@@ -144,7 +165,7 @@ public class HashTableTest {
     classUnderTest.clear();
     
     assertFalse(classUnderTest.size() > 0);
-    assertEquals(classUnderTest.keys(), null);
-    assertEquals(classUnderTest.values(), null);
+    assertEquals(classUnderTest.keys(), new Object[]{});
+    assertEquals(classUnderTest.values(), new Object[]{});
   }
 }

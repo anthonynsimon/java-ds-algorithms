@@ -111,14 +111,46 @@ public class HashTable<K, V> {
     }
   }
   
-  // TODO(anthonynsimon)
+  // Returns array of all values in table
+  // Traverse each bucket and add value to results
   public V[] values() {
-    return null;
+    V[] values = (V[]) new Object[size()];
+    
+    if (size() > 0) {
+      int index = 0;
+      for (int i = 0; i < buckets.length; i++) {
+        HashTableNode<K, V> current = buckets[i];
+        
+        while (current != null) {
+          values[index] = current.getValue();
+          index++;
+          current = current.getNext();
+        }
+      }
+    }
+    
+    return values;
   }
   
-  // TODO(anthonynsimon)
+  // Returns array of all keys in table
+  // Traverse each bucket and add key to results
   public K[] keys() {
-    return null;
+    K[] keys = (K[]) new Object[size()];
+    
+    if (size() > 0) {
+      int index = 0;
+      for (int i = 0; i < buckets.length; i++) {
+        HashTableNode<K, V> current = buckets[i];
+        
+        while (current != null) {
+          keys[index] = current.getKey();
+          index++;
+          current = current.getNext();
+        }
+      }
+    }
+    
+    return keys;
   }
   
   // Returns if some node in table contains provided key
