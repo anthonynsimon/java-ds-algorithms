@@ -12,127 +12,15 @@ public class BinarySearchTree<T extends Comparable<T>> {
   }
   
   public void insert(T data) {
-    BinaryNode<T> current = this.root;
-    BinaryNode<T> newNode = new BinaryNode<>(data);
-    
-    if (size() == 0) {
-      this.root = new BinaryNode<T>(data);
-      this.size++;
-      return;
-    }
-    
-    while (current != null) {
-      if (current.getData().compareTo(data) < 0) {
-        if (current.getRight() == null) {
-          current.setRight(newNode);
-          this.size++;
-          return;
-        }
-        current = current.getRight();
-      }
-      else {
-        if (current.getLeft() == null) {
-          current.setLeft(newNode);
-          this.size++;
-          return;
-        }
-        current = current.getLeft();
-      }
-    }
+    insertWorker(data, this.root);
   }
   
   public T find(T data) {
-    if (isEmpty()) {
-      return null;
-    }
-    
-    BinaryNode<T> current = this.root;
-    
-    while (current != null) {
-      if (current.getData() == data) {
-        return current.getData();
-      }
-      
-      if (current.getData().compareTo(data) < 0) {
-        current = current.getRight();
-      }
-      else {
-        current = current.getLeft();
-      }
-    }
-    
-    return null;
+    return findWorker(data, this.root);
   }
   
   public void remove(T data) {
-    if (isEmpty()) {
-      return;
-    }
-    
-    BinaryNode<T> current = this.root;
-    BinaryNode<T> previous = null;
-    
-    while (current != null) {
-      if (current.getData() == data) {
-        if (current.hasBothChildren()) {
-          BinaryNode<T> maxChildLeft = findMaxChild(current.getLeft());
-          remove(maxChildLeft.getData());
-          current.setData(maxChildLeft.getData());
-        }
-        else if (current.hasAnyChildren()){
-          if (current.getLeft() != null) {
-            if (previous == null) {
-              this.root = current.getLeft();
-            }
-            else {
-              if (previous.getLeft() == current) {
-                previous.setLeft(current.getLeft());
-              }
-              else {
-                previous.setRight(current.getLeft());
-              }
-            }
-          }
-          else if (current.getRight() != null) {
-            if (previous == null) {
-              this.root = current.getRight();
-            }
-            else {
-              if (previous.getLeft() == current) {
-                previous.setLeft(current.getRight());
-              }
-              else {
-                previous.setRight(current.getRight());
-              }
-            }
-          }
-        }
-        else {
-          if (previous == null) {
-            this.root = null;
-          }
-          else {
-            if (previous.getLeft() == current) {
-              previous.setLeft(null);
-            }
-            else {
-              previous.setRight(null);
-            }
-          }
-        }
-        
-        this.size--;
-        return;
-      }
-      
-      previous = current;
-      if (current.getData().compareTo(data) < 0) {
-        current = current.getRight();
-      }
-      else {
-        current = current.getLeft();
-      }
-    }
+    removeWorker(data, this.root);
   }
   
   public int size() {
@@ -160,8 +48,107 @@ public class BinarySearchTree<T extends Comparable<T>> {
     stringBuilder.setLength(stringBuilder.length() - separator.length());
     stringBuilder.append("]");
     
-    
     return stringBuilder.toString();
+  }
+  
+  private void insertWorker(T data, BinaryNode<T> node) {
+    if (node == null) {
+      this.root = new BinaryNode<T>(data, null);
+      this.size++;
+    }
+    else if (node.getData().compareTo(data) < 0) {
+      if (node.hasRightChild()) {
+        insertWorker(data, node.getRight());
+      }
+      else {
+        node.setRight(new BinaryNode<T>(data, node));
+        this.size++;
+      }
+    }
+    else {
+      if (node.hasLeftChild()) {
+        insertWorker(data, node.getLeft());
+      }
+      else {
+        node.setLeft(new BinaryNode<T>(data, node));
+        this.size++;
+      }
+    }
+  }
+  
+  private T findWorker(T data, BinaryNode<T> node) {
+    if (node == null) {
+      return null;
+    }
+    
+    if (node.getData() == data) {
+      return data;
+    }
+    else if (node.getData().compareTo(data) < 0) {
+      return findWorker(data, node.getRight());
+    }
+    else {
+      return findWorker(data, node.getLeft());
+    }
+  }
+  
+  private void removeWorker(T data, BinaryNode<T> node) {
+    if (node == null) {
+      return;
+    }
+    
+    if (node.getData() == data) {
+      if (node.hasAnyChildren()) {
+        if (node.hasBothChildren()) {
+          BinaryNode<T> maxChildLeft = findMaxChild(node.getLeft());
+          removeWorker(maxChildLeft.getData(), node.getLeft());
+          node.setData(maxChildLeft.getData());
+        }
+        else {
+          if (node.hasLeftChild()) {
+            if (node.isRoot()) {
+              this.root = node.getLeft();
+            }
+            else if (node.isLeftChild()) {
+              node.getParent().setLeft(node.getLeft());
+            }
+            else {
+              node.getParent().setRight(node.getLeft());
+            }
+          }
+          else {
+            if (node.isRoot()) {
+              this.root = node.getRight();
+            }
+            else if (node.isLeftChild()) {
+              node.getParent().setLeft(node.getRight());
+            }
+            else {
+              node.getParent().setRight(node.getRight());
+            }
+          }
+        }
+      }
+      else {
+        if (node.isRoot()) {
+          this.root = null;
+        }
+        else if (node.isLeftChild()) {
+          node.getParent().setLeft(null);
+        }
+        else {
+          node.getParent().setRight(null);
+        }
+      }
+      
+      this.size--;
+    }
+    else if (node.getData().compareTo(data) < 0){
+      removeWorker(data, node.getRight());
+    }
+    else {
+      removeWorker(data, node.getLeft());
+    }
   }
   
   private StringBuilder toStringWorker(BinaryNode<T> node, String separator, StringBuilder stringBuilder) {
@@ -187,9 +174,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
     if (node == null) {
       return null;
     }
-    
-    while (node.hasRightChild()) {
-      node = node.getRight();
+    else if (node.hasRightChild()) {
+      return findMaxChild(node.getRight());
     }
     
     return node;
