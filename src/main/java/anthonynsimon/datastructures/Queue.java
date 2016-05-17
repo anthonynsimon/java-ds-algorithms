@@ -62,4 +62,8 @@ public class Queue<E> {
     this.head = null;
     this.tail = null;
   }
+  
+  public boolean isEmpty() {
+    return size() == 0;
+  }
 }

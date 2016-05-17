@@ -49,4 +49,14 @@ public class QueueTest {
     assertEquals(classUnderTest.size(), 0);
     assertEquals(classUnderTest.dequeue(), null);
   }
+  
+  @Test
+  public void testIsEmpty() {
+    assertTrue(classUnderTest.isEmpty());
+    
+    classUnderTest.enqueue("this");
+    classUnderTest.enqueue("that");
+    
+    assertFalse(classUnderTest.isEmpty());
+  }
 }
