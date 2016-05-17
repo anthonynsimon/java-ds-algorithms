@@ -1,6 +1,6 @@
 package anthonynsimon.algorithms.lists;
 
-import anthonynsimon.datastructures.SinglyNode;
+import anthonynsimon.datastructures.util.SinglyNode;
 import java.util.HashSet;
 
 public class ListLoopChecker<E> {

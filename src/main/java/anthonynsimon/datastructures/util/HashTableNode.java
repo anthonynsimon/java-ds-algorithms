@@ -1,6 +1,4 @@
-package anthonynsimon.datastructures;
-
-import anthonynsimon.datastructures.HashTableNode;
+package anthonynsimon.datastructures.util;
 
 public class HashTableNode<K, V> {
   

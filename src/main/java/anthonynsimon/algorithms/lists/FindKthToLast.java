@@ -1,6 +1,6 @@
 package anthonynsimon.algorithms.lists;
 
-import anthonynsimon.datastructures.SinglyNode;
+import anthonynsimon.datastructures.util.SinglyNode;
 import anthonynsimon.datastructures.LinkedList;
 
 public class FindKthToLast<E> extends LinkedList<E> {

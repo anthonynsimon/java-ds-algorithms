@@ -1,5 +1,7 @@
 package anthonynsimon.datastructures;
 
+import anthonynsimon.datastructures.util.SinglyNode;
+
 import java.util.EmptyStackException;
 
 public class Stack<E> {

@@ -3,6 +3,8 @@ package anthonynsimon.datastructures;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import anthonynsimon.datastructures.util.SinglyNode;
+
 public class SinglyNodeTest {
     
   @Test

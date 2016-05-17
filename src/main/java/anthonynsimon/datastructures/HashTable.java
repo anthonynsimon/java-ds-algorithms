@@ -1,6 +1,6 @@
 package anthonynsimon.datastructures;
 
-import anthonynsimon.datastructures.HashTableNode;
+import anthonynsimon.datastructures.util.HashTableNode;
 import anthonynsimon.datastructures.LinkedList;
 
 public class HashTable<K, V> {

@@ -1,5 +1,7 @@
 package anthonynsimon.datastructures;
 
+import anthonynsimon.datastructures.util.SinglyNode;
+
 public class Queue<E> {
   
   protected int size;

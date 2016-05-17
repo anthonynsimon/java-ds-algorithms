@@ -2,6 +2,7 @@ package anthonynsimon.algorithms.stacksqueues;
 
 import org.junit.*;
 import static org.junit.Assert.*;
+
 import java.util.EmptyStackException;
 
 public class StackOfStacksTest {
