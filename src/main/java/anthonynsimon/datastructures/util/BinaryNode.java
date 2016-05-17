@@ -4,9 +4,11 @@ public class BinaryNode<T> {
   protected T data;
   protected BinaryNode<T> left;
   protected BinaryNode<T> right;
+  protected BinaryNode<T> parent;
   
-  public BinaryNode(T data) {
+  public BinaryNode(T data, BinaryNode<T> parent) {
     this.data = data;
+    this.parent = parent;
   }
   
   public T getData() {
@@ -21,6 +23,10 @@ public class BinaryNode<T> {
     return this.right;
   }
   
+  public BinaryNode<T> getParent() {
+    return this.parent;
+  }
+  
   public void setData(T data) {
     this.data = data;
   }
@@ -31,6 +37,10 @@ public class BinaryNode<T> {
   
   public void setRight(BinaryNode<T> newNode) {
     this.right = newNode;
+  }
+  
+  public void setParent(BinaryNode<T> newParent) {
+    this.parent = newParent;
   }
   
   public boolean hasAnyChildren() {
@@ -47,5 +57,23 @@ public class BinaryNode<T> {
 
   public boolean hasRightChild() {
     return this.right != null;
+  }
+  
+  public boolean isLeftChild() {
+    if (this.parent != null) {
+      return this.parent.getLeft() == this;
+    }
+    return false;
+  }
+  
+  public boolean isRightChild() {
+    if (this.parent != null) {
+      return this.parent.getRight() == this;
+    }
+    return false;
+  }
+  
+  public boolean isRoot() {
+    return this.parent == null;
   }
 }
