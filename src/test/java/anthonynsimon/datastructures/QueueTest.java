@@ -29,6 +29,22 @@ public class QueueTest {
   }
   
   @Test
+  public void testPeek() {
+    classUnderTest.enqueue("this");    
+    classUnderTest.enqueue("that");
+    
+    assertEquals(classUnderTest.peek(), "this");
+    
+    classUnderTest.dequeue();
+
+    assertEquals(classUnderTest.peek(), "that");
+
+    classUnderTest.dequeue();
+
+    assertEquals(classUnderTest.peek(), null);
+  }
+  
+  @Test
   public void testDequeue() {
     classUnderTest.clear();
     classUnderTest.enqueue("one");

@@ -18,6 +18,14 @@ public class Queue<E> {
     return this.size;
   }
   
+  public E peek() {
+    if (size() == 0) {
+      return null;
+    }
+    
+    return this.head.getData();
+  }
+  
   // Append element to the tail (back) of the queue.
   // Move tail pointer to this new element.
   public void enqueue(E item) {
