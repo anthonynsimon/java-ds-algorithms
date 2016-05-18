@@ -41,3 +41,4 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Multi Stack in Array](/src/main/java/anthonynsimon/datastructures/MultiStackArray.java)
 - [HashTable](/src/main/java/anthonynsimon/datastructures/HashTable.java)
 - [Binary Search Tree](/src/main/java/anthonynsimon/datastructures/BinarySearchTree.java)
+- [Undirected Graph](/src/main/java/anthonynsimon/datastructures/Graph.java)
