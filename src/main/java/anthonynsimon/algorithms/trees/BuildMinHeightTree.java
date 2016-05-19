@@ -29,7 +29,7 @@ public class BuildMinHeightTree {
     }
     
     // Calculate partition middle index
-    int middle = (max - min) / 2 + min;
+    int middle = (min + max) / 2;
     // Insert data at middle index
     tree.insert(data[middle]);
     
