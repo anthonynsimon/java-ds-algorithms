@@ -3,6 +3,8 @@ package anthonynsimon.algorithms.trees;
 import org.junit.*;
 import static org.junit.Assert.*;
 
+import java.util.Random;
+
 import anthonynsimon.datastructures.BinarySearchTree;
 
 public class BuildMinHeightTreeTest {
@@ -16,65 +18,80 @@ public class BuildMinHeightTreeTest {
   
   @Test
   public void testEmpty() {
-    BinarySearchTree<Integer> actual = classUnderTest.build(new int[]{});
-    
-    BinarySearchTree<Integer> expected = new BinarySearchTree<>();
-    
-    assertEquals(expected.toString(), actual.toString());
+    BinarySearchTree<Integer> actual = classUnderTest.build(new int[]{});   
+     
+    assertEquals(actual.getHeight(), calculateMinHeight(0));
   }
   
   @Test
   public void testOne() {
-    BinarySearchTree<Integer> actual = classUnderTest.build(new int[]{7});
+    BinarySearchTree<Integer> actual = classUnderTest.build(generateOrderedArray(1));
     
-    BinarySearchTree<Integer> expected = new BinarySearchTree<>();
-    expected.insert(7);
-    
-    assertEquals(expected.toString(), actual.toString());
+    assertEquals(actual.getHeight(), calculateMinHeight(1));
   }
-  
-  //TODO(anthonynsimon): assert by height once the calc height algorithm is ready
-  
+    
   @Test
   public void testEvenNumber() {
-    BinarySearchTree<Integer> actual = classUnderTest.build(new int[]{1, 2, 3, 4, 5, 6});
+    BinarySearchTree<Integer> actual = classUnderTest.build(generateOrderedArray(4));
     
-    BinarySearchTree<Integer> expected = new BinarySearchTree<>();
-    expected.insert(3);
-    expected.insert(1);
-    expected.insert(5);
-    expected.insert(2);
-    expected.insert(4);
-    expected.insert(6);
-    
-    assertEquals(expected.toString(), actual.toString());
+    assertEquals(actual.getHeight(), calculateMinHeight(4));
   }
 
   @Test
   public void testOddNumber() {
-    BinarySearchTree<Integer> actual = classUnderTest.build(new int[]{1, 2, 3, 4, 5});
+    BinarySearchTree<Integer> actual = classUnderTest.build(generateOrderedArray(5));
     
-    BinarySearchTree<Integer> expected = new BinarySearchTree<>();
-    expected.insert(3);
-    expected.insert(1);
-    expected.insert(5);
-    expected.insert(2);
-    expected.insert(4);
-    
-    assertEquals(expected.toString(), actual.toString());
+    assertEquals(actual.getHeight(), calculateMinHeight(5));
   }
   
   @Test
   public void testUnsorted() {
-    BinarySearchTree<Integer> actual = classUnderTest.build(new int[]{5, 4, 1, 2, 3});
+    BinarySearchTree<Integer> actual = classUnderTest.build(generateRandomArray(5));
     
-    BinarySearchTree<Integer> expected = new BinarySearchTree<>();
-    expected.insert(3);
-    expected.insert(1);
-    expected.insert(5);
-    expected.insert(2);
-    expected.insert(4);
+    assertEquals(actual.getHeight(), calculateMinHeight(5));
+  }
+  
+  @Test
+  public void testUnsortedLarge() {
+    BinarySearchTree<Integer> actual = classUnderTest.build(generateRandomArray(2048));
     
-    assertEquals(expected.toString(), actual.toString());
+    assertTrue(calculateMinHeight(2048) < actual.getHeight() && actual.getHeight() < calculateMaxHeight(2048));
+  }
+  
+  @Test
+  public void testSortedLarge() {
+    BinarySearchTree<Integer> actual = classUnderTest.build(generateOrderedArray(2048));
+    
+    assertEquals(actual.getHeight(), calculateMinHeight(2048));
+  }
+  
+  // Helper method to calculate minimum possible height for complete BST
+  private int calculateMinHeight(int n) {
+    if (n <= 0) {
+      return 0;
+    }
+    
+    return (int)(Math.log(n) / Math.log(2));
+  }
+  
+  private int calculateMaxHeight(int n) {
+    return n - 1;
+  }
+  
+  private int[] generateOrderedArray(int size) {
+    int[] result = new int[size];
+    for (int i = 0; i < size; i++) {
+      result[i] = i;
+    }
+    return result;
+  }
+  
+  private int[] generateRandomArray(int size) {
+    int[] result = new int[size];
+    Random rand = new Random();
+    for (int i = 0; i < size; i++) {
+      result[i] = rand.nextInt(size);
+    }
+    return result;
   }
 }
