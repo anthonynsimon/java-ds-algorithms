@@ -15,7 +15,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 
 ## Algorithms:
 ### Trees
-- [Build a minimum height tree from an unsorted array](/src/main/java/anthonynsimon/algorithms/trees/BuildMinHeightTree.java)
+- [Build a minimum height tree from an unsorted/sorted array](/src/main/java/anthonynsimon/algorithms/trees/BuildMinHeightTree.java)
 
 ### Arrays
 - [In-place matrix rotation](/src/main/java/anthonynsimon/algorithms/arrays/MatrixRotation.java)
