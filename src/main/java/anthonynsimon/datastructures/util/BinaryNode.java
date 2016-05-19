@@ -1,10 +1,10 @@
 package anthonynsimon.datastructures.util;
 
 public class BinaryNode<T> {
-  protected T data;
-  protected BinaryNode<T> left;
-  protected BinaryNode<T> right;
-  protected BinaryNode<T> parent;
+  private T data;
+  private BinaryNode<T> left;
+  private BinaryNode<T> right;
+  private BinaryNode<T> parent;
   
   public BinaryNode(T data, BinaryNode<T> parent) {
     this.data = data;
@@ -75,5 +75,25 @@ public class BinaryNode<T> {
   
   public boolean isRoot() {
     return this.parent == null;
+  }
+  
+  public int getMaxHeight() {
+    if (!hasAnyChildren()) {
+      return 0;
+    }
+    else {
+      int leftMaxHeight = 0;
+      int rightMaxHeight = 0;
+      
+      if (hasLeftChild()) {
+        leftMaxHeight = this.left.getMaxHeight();
+      }
+      
+      if (hasRightChild()) {
+        rightMaxHeight = this.right.getMaxHeight();
+      }
+      
+      return 1 + (leftMaxHeight > rightMaxHeight ? leftMaxHeight : rightMaxHeight);
+    }
   }
 }

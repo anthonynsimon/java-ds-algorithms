@@ -44,6 +44,14 @@ public class BinarySearchTree<T extends Comparable<T>> {
     return this.size == 0;
   }
   
+  public int getHeight() {
+    if (isEmpty()) {
+      return 0;
+    }
+    
+    return this.root.getMaxHeight();
+  }
+  
   // Returns the contents of tree as string
   // In-order traversal with default glue string between elements
   public String toString() {

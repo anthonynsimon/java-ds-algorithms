@@ -116,6 +116,27 @@ public class BinarySearchTreeTest {
   }
   
   @Test
+  public void testMaxHeight() {
+    assertEquals(classUnderTest.getHeight(), 0);
+    
+    classUnderTest.insert("b");
+    
+    assertEquals(classUnderTest.getHeight(), 0);
+
+    classUnderTest.insert("c");
+    
+    assertEquals(classUnderTest.getHeight(), 1);
+    
+    classUnderTest.insert("a");
+    
+    assertEquals(classUnderTest.getHeight(), 1);
+    
+    classUnderTest.insert("f");
+    
+    assertEquals(classUnderTest.getHeight(), 2);
+  }
+  
+  @Test
   public void testToString() {    
     classUnderTest.insert("b");
     classUnderTest.insert("a");
