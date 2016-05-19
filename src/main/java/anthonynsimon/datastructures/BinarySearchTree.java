@@ -52,6 +52,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
   
   // Returns the contents of tree as string with separator (glue) string
   public String toString(String separator) {
+    if (isEmpty()) {
+      return "";
+    }
+    
     StringBuilder stringBuilder = new StringBuilder();
     
     stringBuilder.append("[");

@@ -3,7 +3,20 @@ Trying out various DS and Algorithms for learning purposes and to refresh my Jav
 
 All with their corresponding tests. [Go to tests root directory](/src/test/java/anthonynsimon/)
 
+## Data Structures:
+- [Singly Linked List](/src/main/java/anthonynsimon/datastructures/LinkedList.java)
+- [Stack](/src/main/java/anthonynsimon/datastructures/Stack.java)
+- [Queue](/src/main/java/anthonynsimon/datastructures/Queue.java)
+- [Dynamic Array](/src/main/java/anthonynsimon/datastructures/DynamicArray.java)
+- [Multi Stack in Array](/src/main/java/anthonynsimon/datastructures/MultiStackArray.java)
+- [HashTable](/src/main/java/anthonynsimon/datastructures/HashTable.java)
+- [Binary Search Tree](/src/main/java/anthonynsimon/datastructures/BinarySearchTree.java)
+- [Undirected Graph](/src/main/java/anthonynsimon/datastructures/Graph.java)
+
 ## Algorithms:
+### Trees
+- [Build a minimum height tree from an unsorted array](/src/main/java/anthonynsimon/algorithms/trees/BuildMinHeightTree.java)
+
 ### Arrays
 - [In-place matrix rotation](/src/main/java/anthonynsimon/algorithms/arrays/MatrixRotation.java)
 - [Nullify rows and columns in matrix](/src/main/java/anthonynsimon/algorithms/arrays/NullifyMatrix.java)
@@ -32,13 +45,3 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Partition list in place](/src/main/java/anthonynsimon/algorithms/lists/PartitionList.java)
 - [Check if list is palindrome](/src/main/java/anthonynsimon/algorithms/lists/ListPalindromeChecker.java)
 - [Find intersection of two lists](/src/main/java/anthonynsimon/algorithms/lists/ListIntersection.java)
-
-## Data Structures:
-- [Singly Linked List](/src/main/java/anthonynsimon/datastructures/LinkedList.java)
-- [Stack](/src/main/java/anthonynsimon/datastructures/Stack.java)
-- [Queue](/src/main/java/anthonynsimon/datastructures/Queue.java)
-- [Dynamic Array](/src/main/java/anthonynsimon/datastructures/DynamicArray.java)
-- [Multi Stack in Array](/src/main/java/anthonynsimon/datastructures/MultiStackArray.java)
-- [HashTable](/src/main/java/anthonynsimon/datastructures/HashTable.java)
-- [Binary Search Tree](/src/main/java/anthonynsimon/datastructures/BinarySearchTree.java)
-- [Undirected Graph](/src/main/java/anthonynsimon/datastructures/Graph.java)
