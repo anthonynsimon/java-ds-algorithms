@@ -12,6 +12,11 @@ public class BinarySearchTree<T extends Comparable<T>> {
     this.size = 0;
   }
   
+  // Helper function for some algorithms that operate on the tree
+  public BinaryNode<T> getRootNode() {
+    return this.root;
+  }
+  
   // Inserts data while keeping the BST property
   public void insert(T data) {
     insertWorker(data, this.root);
