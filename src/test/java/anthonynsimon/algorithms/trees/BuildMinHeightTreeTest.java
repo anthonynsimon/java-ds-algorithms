@@ -48,7 +48,7 @@ public class BuildMinHeightTreeTest {
   public void testUnsorted() {
     BinarySearchTree<Integer> actual = classUnderTest.build(generateRandomArray(5));
     
-    assertEquals(actual.getHeight(), calculateMinHeight(5));
+    assertTrue(calculateMinHeight(5) - actual.getHeight() <= 1);
   }
   
   @Test
