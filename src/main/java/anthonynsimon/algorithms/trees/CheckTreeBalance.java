@@ -3,11 +3,11 @@ package anthonynsimon.algorithms.trees;
 import anthonynsimon.datastructures.BinarySearchTree;
 import anthonynsimon.datastructures.util.BinaryNode;
 
-public class CheckTreeBalance {
+public class CheckTreeBalance<T extends Comparable<T>> {
   
   // Solution is O(N) becase the height of the subtree is calculated at the same time
   // that the balance is checked, so the tree is traversed only once.
-  public boolean isTreeBalanced(BinarySearchTree tree) {    
+  public boolean isTreeBalanced(BinarySearchTree<T> tree) {    
     // Recursively check the balance per level
     int balance = checkBalance(tree.getRootNode());
     
@@ -25,7 +25,7 @@ public class CheckTreeBalance {
   // Recursively traverse the tree checking difference in heights
   // If unbalanced section is found, propagate special return to the top
   // In this case Integer.MIN_VALUE is the special value
-  private int checkBalance(BinaryNode node) {
+  private int checkBalance(BinaryNode<T> node) {
     // Base case
     if (node == null) {
       return -1;
