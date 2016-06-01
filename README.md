@@ -18,6 +18,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Build a minimum height tree from an unsorted/sorted array](/src/main/java/anthonynsimon/algorithms/trees/BuildMinHeightTree.java)
 - [Build list of lists that each contain the tree nodes per height level](/src/main/java/anthonynsimon/algorithms/trees/BinaryTreeToLists.java)
 - [Check if tree is BST](/src/main/java/anthonynsimon/algorithms/trees/CheckBst.java)
+- [Find the in-order successor of a node in a tree](/src/main/java/anthonynsimon/algorithms/trees/SuccessorFinder.java)
 - [Recursively calculate height and balance of tree in one pass](/src/main/java/anthonynsimon/algorithms/trees/CheckTreeBalance.java)
 
 ### Arrays
