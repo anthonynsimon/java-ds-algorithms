@@ -31,6 +31,9 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Queue via Stacks](/src/main/java/anthonynsimon/algorithms/stacksqueues/QueueViaStacks.java)
 - [Sort stack by using another stack](/src/main/java/anthonynsimon/algorithms/stacksqueues/StackSorter.java)
 
+### Sorting
+- [Merge Sort](/src/main/java/anthonynsimon/algorithms/sorts/MergeSort.java)
+
 ### Strings
 - [String has unique characters](/src/main/java/anthonynsimon/algorithms/strings/UniqueCharacters.java)
 - [Check if string is permutation of another](/src/main/java/anthonynsimon/algorithms/strings/PermutationMatch.java)
