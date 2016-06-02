@@ -32,6 +32,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Sort stack by using another stack](/src/main/java/anthonynsimon/algorithms/stacksqueues/StackSorter.java)
 
 ### Sorting
+- [Quick Sort](/src/main/java/anthonynsimon/algorithms/sorts/QuickSort.java)
 - [Merge Sort](/src/main/java/anthonynsimon/algorithms/sorts/MergeSort.java)
 - [Bubble Sort](/src/main/java/anthonynsimon/algorithms/sorts/BubbleSort.java)
 
