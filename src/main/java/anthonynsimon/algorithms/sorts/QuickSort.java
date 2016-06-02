@@ -19,6 +19,8 @@ public class QuickSort {
       return;
     }
     
+    // Reorder partition so that x < pivot on the left and x >= pivot on the right
+    // Returned int is the index of the pivot
     int pivot = partition(array, min, max);
     
     // Recursively apply quick sort to left and right side of list
