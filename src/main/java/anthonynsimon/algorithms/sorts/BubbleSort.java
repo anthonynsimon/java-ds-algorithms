@@ -1,7 +1,5 @@
 package anthonynsimon.algorithms.sorts;
 
-import java.util.Arrays;
-
 public class BubbleSort {
   
   public int[] sort(int[] array) {
