@@ -13,10 +13,11 @@ public class TrieTest {
   }
 
   @Test
-  public void testPut() {/*
+  public void testPut() {
     trie.put("hello", 7);
     trie.put("GOOD", 64);
-    trie.put(null, 5);*/
+    trie.put("a", 4);
+    trie.put(null, 5);
   }
 
   @Test
@@ -25,7 +26,7 @@ public class TrieTest {
   }
 
   @Test
-  public void testGet() {/*
+  public void testGet() {
     String[] memberWords = new String[]{
       "hello",
       "Germany",
@@ -54,12 +55,12 @@ public class TrieTest {
     }
 
     for (String word : nonMemberWords) {
-      assertFalse(trie.get(word) == word.length());
-    }*/
+      assertEquals(trie.get(word), null);
+    }
   }
 
   @Test
-  public void testGetAutoComplete() {
+  public void testGetAutoCompleteSuggestions() {
 
   }
 

@@ -31,13 +31,6 @@ public class Trie<T> {
   }
 
   public void remove(String word) {
-    if (word == null || word.length() <= 0) {
-      return;
-    }
-
-    word = word.toLowerCase();
-
-
   }
 
   public T get(String word) {
@@ -55,8 +48,6 @@ public class Trie<T> {
       }
       current = current.children[index];
     }
-
-    System.out.println(current.value);
 
     return current.value;
   }
