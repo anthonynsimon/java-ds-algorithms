@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 public class WordAutocompleterTest {
   
   private WordAutocompleter autocompleter;
+  private String[] emptyStringArray;
   
   @Before
   public void setUp() {
@@ -28,12 +29,31 @@ public class WordAutocompleterTest {
     for (String word : memberWords) {
       autocompleter.put(word, word.length());
     }
+
+    emptyStringArray = new String[]{};
   }
   
   @Test
   public void testEmptyString() {
-    for (String suggestion : autocompleter.autocomplete("ha")) {
-      System.out.println(suggestion);
-    }
+    assertEquals(autocompleter.autocomplete(""), emptyStringArray);
+  }
+
+  @Test
+  public void testNonMemberWord() {
+    assertEquals(autocompleter.autocomplete("x"), emptyStringArray);
+    assertEquals(autocompleter.autocomplete("germo"), emptyStringArray);
+  }
+
+  @Test
+  public void testMemberWordWithSuggestions() {
+    assertEquals(autocompleter.autocomplete("ger"), new String[] {
+      "germ",
+      "germany"
+    });
+  }
+
+  @Test
+  public void testMemberWordWithoutSuggestions() {
+    assertEquals(autocompleter.autocomplete("hair"), emptyStringArray);
   }
 }
