@@ -38,21 +38,4 @@ public class WordAutocompleter extends Trie {
       }
     }
   }
-
-  private TrieNode getNodeAtLast(String prefix) {
-    if (prefix == null || prefix.length() == 0) {
-      return null;
-    }
-
-    TrieNode current = this.root;
-    for (int i = 0; i < prefix.length(); i++) {
-      int index = charIndexAt(prefix, i);
-      if (current.children[index] == null) {
-        return null;
-      }
-      current = current.children[index];
-    }
-
-    return current;
-  }
 }

@@ -42,37 +42,19 @@ public class Trie<T> {
   }
 
   public T get(String word) {
-    if (word == null || word.length() <= 0) {
-      return null;
-    }
-
-    word = word.toLowerCase();
-
-    TrieNode<T> current = this.root;
-    for (int i = 0; i < word.length(); i++) {
-      int index = charIndexAt(word, i);
-      if (current.children[index] == null) {
-        return null;
-      }
-      current = current.children[index];
-    }
-
-    return current.value;
+    TrieNode<T> result = getNodeAtLast(word);
+    return result != null ? result.value : null;
   }
 
   public boolean isEmpty() {
-    for (int i = 0; i < this.root.children.length; i ++) {
-      if (this.root.children[i] != null) {
-        return false;
-      }
-    }
-    return true;
+    return this.root.isEmpty();
   }
 
   public void clear() {
     this.root = new TrieNode<>(ALPHABET_COUNT);
   }
 
+  // Map the ASCII char index to the range of the 26 english letters
   protected int charIndexAt(String word, int index) {
     return (int)word.charAt(index) - charOffset;
   }
@@ -104,5 +86,28 @@ public class Trie<T> {
     if (node.children[charIndex].isEmpty()) {
       node.children[charIndex] = null;
     }
+  }
+
+  protected TrieNode getNodeAtLast(String prefix) {
+    if (prefix == null || prefix.length() == 0) {
+      return null;
+    }
+
+    // For simplicity only deal with lowercase chars
+    prefix = prefix.toLowerCase();
+
+    // Traverse tree nodes by char index until we reach
+    // the last char for the prefix or reach into null node
+    TrieNode current = this.root;
+    for (int i = 0; i < prefix.length(); i++) {
+      int index = charIndexAt(prefix, i);
+      if (current.children[index] == null) {
+        return null;
+      }
+      current = current.children[index];
+    }
+
+    // Last node reached is the last char in the prefix
+    return current;
   }
 }
