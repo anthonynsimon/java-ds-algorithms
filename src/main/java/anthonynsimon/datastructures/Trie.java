@@ -5,7 +5,7 @@ import anthonynsimon.datastructures.util.TrieNode;
 public class Trie<T> {
 
   TrieNode<T> root;
-  int charOffset = 97;
+  int charOffset = 97; // ASCII offset for lowercase chars
   int ALPHABET_COUNT = 26;
 
   public Trie() {
@@ -50,6 +50,10 @@ public class Trie<T> {
     }
 
     return current.value;
+  }
+
+  public void clear() {
+    this.root = new TrieNode<>(ALPHABET_COUNT);
   }
 
   private int charIndexAt(String word, int index) {

@@ -66,7 +66,25 @@ public class TrieTest {
 
   @Test
   public void testClear() {
+    String[] memberWords = new String[]{
+      "hello",
+      "Germany",
+      "mountains",
+      "ab",
+      "w",
+      "ger",
+      "mountAINS"
+    };
 
+    for (String word : memberWords) {
+      trie.put(word, word.length());
+    }
+
+    trie.clear();
+
+    for (String word : memberWords) {
+      assertEquals(trie.get(word), null);
+    }
   }
 
   @Test
