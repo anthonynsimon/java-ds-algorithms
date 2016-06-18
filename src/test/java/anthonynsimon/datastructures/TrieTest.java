@@ -89,7 +89,27 @@ public class TrieTest {
 
   @Test
   public void testIsEmpty() {
+    assertTrue(trie.isEmpty());
 
+    String[] memberWords = new String[]{
+      "hello",
+      "Germany",
+      "mountains",
+      "ab",
+      "w",
+      "ger",
+      "mountAINS"
+    };
+
+    for (String word : memberWords) {
+      trie.put(word, word.length());
+    }
+
+    assertFalse(trie.isEmpty());
+
+    trie.clear();
+
+    assertTrue(trie.isEmpty());
   }
 
   @Test

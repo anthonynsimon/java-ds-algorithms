@@ -52,6 +52,15 @@ public class Trie<T> {
     return current.value;
   }
 
+  public boolean isEmpty() {
+    for (int i = 0; i < this.root.children.length; i ++) {
+      if (this.root.children[i] != null) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public void clear() {
     this.root = new TrieNode<>(ALPHABET_COUNT);
   }
