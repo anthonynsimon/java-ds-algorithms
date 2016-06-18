@@ -4,6 +4,7 @@ Trying out various DS and Algorithms for learning purposes and to refresh my Jav
 All with their corresponding tests. [Go to tests root directory](/src/test/java/anthonynsimon/)
 
 ## Data Structures:
+- [Prefix Tree (Trie)](/src/main/java/anthonynsimon/datastructures/Trie.java)
 - [Singly Linked List](/src/main/java/anthonynsimon/datastructures/LinkedList.java)
 - [Stack](/src/main/java/anthonynsimon/datastructures/Stack.java)
 - [Queue](/src/main/java/anthonynsimon/datastructures/Queue.java)
