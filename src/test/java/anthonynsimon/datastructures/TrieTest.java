@@ -22,7 +22,33 @@ public class TrieTest {
 
   @Test
   public void testRemove() {
+    String[] memberWords = new String[]{
+      "hello",
+      "Germany",
+      "mountains",
+      "ab",
+      "w",
+      "ger",
+      "mountAINS"
+    };
 
+    for (String word : memberWords) {
+      trie.put(word, word.length());
+    }
+
+    assertTrue(trie.get("hello") == "hello".length());
+
+    trie.remove("hello");
+
+    assertEquals(trie.get("hello"), null);
+
+    assertTrue(trie.get("germany") == "germany".length());
+
+    trie.remove("germany");
+
+    assertEquals(trie.get("germany"), null);
+
+    assertTrue(trie.get("ger") == "ger".length());
   }
 
   @Test
@@ -57,11 +83,6 @@ public class TrieTest {
     for (String word : nonMemberWords) {
       assertEquals(trie.get(word), null);
     }
-  }
-
-  @Test
-  public void testGetAutoCompleteSuggestions() {
-
   }
 
   @Test
@@ -110,10 +131,5 @@ public class TrieTest {
     trie.clear();
 
     assertTrue(trie.isEmpty());
-  }
-
-  @Test
-  public void testSize() {
-
   }
 }

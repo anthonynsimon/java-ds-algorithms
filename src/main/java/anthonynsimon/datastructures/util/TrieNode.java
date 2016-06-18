@@ -15,6 +15,6 @@ public class TrieNode<T> {
         return false;
       }
     }
-    return true;
+    return this.value == null;
   }
 }

@@ -31,6 +31,32 @@ public class Trie<T> {
   }
 
   public void remove(String word) {
+    if (word == null || word.length() <= 0) {
+      return;
+    }
+    removeWorker(word, this.root, 0);
+  }
+
+  private void removeWorker(String word, TrieNode node, int i) {
+    if (i >= word.length()) {
+      return;
+    }
+
+    int charIndex = charIndexAt(word, i);
+
+    if (node.children[charIndex] == null) {
+      return;
+    }
+
+    removeWorker(word, node.children[charIndex], i + 1);
+
+    if (i == word.length() - 1) {
+      node.children[charIndex].value = null;
+    }
+    
+    if (node.children[charIndex].isEmpty()) {
+      node.children[charIndex] = null;
+    }
   }
 
   public T get(String word) {
