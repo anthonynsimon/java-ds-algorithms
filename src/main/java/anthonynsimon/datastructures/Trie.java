@@ -4,9 +4,9 @@ import anthonynsimon.datastructures.util.TrieNode;
 
 public class Trie<T> {
 
-  TrieNode<T> root;
-  int charOffset = 97; // ASCII offset for lowercase chars
-  int ALPHABET_COUNT = 26;
+  protected TrieNode<T> root;
+  protected int charOffset = 97; // ASCII offset for lowercase chars
+  protected int ALPHABET_COUNT = 26;
 
   public Trie() {
     this.root = new TrieNode<>(ALPHABET_COUNT);
@@ -35,28 +35,6 @@ public class Trie<T> {
       return;
     }
     removeWorker(word, this.root, 0);
-  }
-
-  private void removeWorker(String word, TrieNode node, int i) {
-    if (i >= word.length()) {
-      return;
-    }
-
-    int charIndex = charIndexAt(word, i);
-
-    if (node.children[charIndex] == null) {
-      return;
-    }
-
-    removeWorker(word, node.children[charIndex], i + 1);
-
-    if (i == word.length() - 1) {
-      node.children[charIndex].value = null;
-    }
-    
-    if (node.children[charIndex].isEmpty()) {
-      node.children[charIndex] = null;
-    }
   }
 
   public T get(String word) {
@@ -91,7 +69,29 @@ public class Trie<T> {
     this.root = new TrieNode<>(ALPHABET_COUNT);
   }
 
-  private int charIndexAt(String word, int index) {
+  protected int charIndexAt(String word, int index) {
     return (int)word.charAt(index) - charOffset;
+  }
+
+  protected void removeWorker(String word, TrieNode node, int i) {
+    if (i >= word.length()) {
+      return;
+    }
+
+    int charIndex = charIndexAt(word, i);
+
+    if (node.children[charIndex] == null) {
+      return;
+    }
+
+    removeWorker(word, node.children[charIndex], i + 1);
+
+    if (i == word.length() - 1) {
+      node.children[charIndex].value = null;
+    }
+
+    if (node.children[charIndex].isEmpty()) {
+      node.children[charIndex] = null;
+    }
   }
 }
