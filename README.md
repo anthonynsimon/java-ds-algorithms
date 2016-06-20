@@ -21,6 +21,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Check if tree is BST](/src/main/java/anthonynsimon/algorithms/trees/CheckBst.java)
 - [Find the in-order successor of a node in a tree](/src/main/java/anthonynsimon/algorithms/trees/SuccessorFinder.java)
 - [Recursively calculate height and balance of tree in one pass](/src/main/java/anthonynsimon/algorithms/trees/CheckTreeBalance.java)
+- [Autocomplete a word using a Trie](/src/main/java/anthonynsimon/algorithms/trees/WordAutocompleter.java)
 
 ### Arrays
 - [In-place matrix rotation](/src/main/java/anthonynsimon/algorithms/arrays/MatrixRotation.java)
