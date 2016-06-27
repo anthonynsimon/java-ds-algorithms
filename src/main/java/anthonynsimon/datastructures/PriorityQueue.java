@@ -96,7 +96,7 @@ public class PriorityQueue<T> {
   }
 
   protected void percolateUp(int index) {
-    while (true) {
+    while (index > 0) {
       int parentIndex  = getParentIndex(index);
       if (heap[index].priority < heap[parentIndex].priority) {
         swap(index, parentIndex);
