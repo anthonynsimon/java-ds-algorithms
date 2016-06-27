@@ -2,7 +2,7 @@ package anthonynsimon.datastructures;
 
 import anthonynsimon.datastructures.util.HeapNode;
 
-public class PriorityQueue<T> {
+public class PriorityQueue<T extends Comparable<T>> {
 
   protected HeapNode[] heap;
   protected int size;
@@ -73,8 +73,8 @@ public class PriorityQueue<T> {
     size = 0;
   }
 
-  public T[] toArray() {
-    T[] result = (T[]) new Object[size];
+  public Comparable[] toArray() {
+    Comparable[] result = new Comparable[size];
     for (int i = 0; i < size; i++) {
       result[i] = (T)heap[getIndexAt(i)].data;
     }
@@ -109,34 +109,35 @@ public class PriorityQueue<T> {
   }
 
   protected void percolateUp(int index) {
-    HeapNode node = heap[index];
     while (index / 2 > 0) {
-      if (node.priority < heap[getParentIndex(index)].priority) {
-        heap[index] = heap[getParentIndex(index)];
-        heap[getParentIndex(index)] = node;
+      int parentIndex = getParentIndex(index);
+      if (heap[index].priority < heap[parentIndex].priority) {
+        swap(index, parentIndex);
+      }
+      else {
+        return;
       }
       index /= 2;
     }
-    return;
   }
 
   protected void percolateDown(int index) {
-    HeapNode node = heap[index];
-    if (node == null) {
-      return;
-    }
-
     while (index * 2 <= size()) {
-      int minChild = getMinChildIndex(index);
-      if (heap[minChild].priority < node.priority) {
-        heap[index] = heap[minChild];
-        heap[minChild] = node;
+      int minChildIndex = getMinChildIndex(index);
+      if (heap[minChildIndex].priority < heap[index].priority) {
+        swap(index, minChildIndex);
       }
       else {
-        break;
+        return;
       }
-      index = minChild;
+      index = minChildIndex;
     }
+  }
+
+  protected void swap(int indexA, int indexB) {
+    HeapNode temp = heap[indexA];
+    heap[indexA] = heap[indexB];
+    heap[indexB] = temp;
   }
 
   protected int getParentIndex(int i) {
