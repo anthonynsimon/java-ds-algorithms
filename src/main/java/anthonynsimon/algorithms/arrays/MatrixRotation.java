@@ -1,14 +1,14 @@
 package anthonynsimon.algorithms.arrays;
 
 public class MatrixRotation {
-  
-  public int[][] rotate(int[][] matrix) {
-    int sideLength = matrix.length;
-    
-    // Return early if matrix is not square or if it's empty
-    if (sideLength == 0 || sideLength != matrix[0].length) {
-      return matrix;
-    }
+
+    public int[][] rotate(int[][] matrix) {
+        int sideLength = matrix.length;
+
+        // Return early if matrix is not square or if it's empty
+        if (sideLength == 0 || sideLength != matrix[0].length) {
+            return matrix;
+        }
     
     /*
     * Iterate over each "layer", starting from the corners swap each cell in-place.
@@ -31,16 +31,16 @@ public class MatrixRotation {
     * [A][ ][ ][B]  ->  [ ][A][ ][ ]  ->  [ ][ ][A][ ]  ->  [ ][ ][ ][ ]
     * 
     */
-    for (int layer = 0; layer < sideLength/2; layer++) {
-      for (int position = layer; position < sideLength-1-layer; position++) {
-        int temp = matrix[position][layer];
-        matrix[position][layer] = matrix[sideLength-1-layer][position];
-        matrix[sideLength-1-layer][position] = matrix[sideLength-1-position][sideLength-1-layer];
-        matrix[sideLength-1-position][sideLength-1-layer] = matrix[layer][sideLength-1-position];
-        matrix[layer][sideLength-1-position] = temp;
-      }
-    } 
-    
-    return matrix;
-  }
+        for (int layer = 0; layer < sideLength / 2; layer++) {
+            for (int position = layer; position < sideLength - 1 - layer; position++) {
+                int temp = matrix[position][layer];
+                matrix[position][layer] = matrix[sideLength - 1 - layer][position];
+                matrix[sideLength - 1 - layer][position] = matrix[sideLength - 1 - position][sideLength - 1 - layer];
+                matrix[sideLength - 1 - position][sideLength - 1 - layer] = matrix[layer][sideLength - 1 - position];
+                matrix[layer][sideLength - 1 - position] = temp;
+            }
+        }
+
+        return matrix;
+    }
 }
