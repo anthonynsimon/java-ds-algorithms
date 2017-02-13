@@ -1,5 +1,5 @@
 # Data Structures and Algorithms in Java
-[![Build Status](https://travis-ci.org/com/anthonynsimon/java-ds-algorithms.svg?branch=master)](https://travis-ci.org/com/anthonynsimon/java-ds-algorithms)
+[![Build Status](https://travis-ci.org/anthonynsimon/java-ds-algorithms.svg?branch=master)](https://travis-ci.org/anthonynsimon/java-ds-algorithms)
 Trying out various DS and Algorithms for learning purposes and to refresh my Java skills.
 
 All with their corresponding tests. [Go to tests root directory](/src/test/java/com/anthonynsimon/)
