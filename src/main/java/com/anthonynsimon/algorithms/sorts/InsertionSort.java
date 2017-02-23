@@ -25,14 +25,16 @@ public class InsertionSort {
 
             while (j >= 0 && array[j] >= elementBeingSorted) {
 
-                // Since the element we are comparing elementBeingSorted is larger,
+                // Since the element we are comparing elementBeingSorted to is larger,
                 // we move it ahead by one index
                 array[j + 1] = array[j];
 
                 j--;
+
             } // End while loop
 
             // Once the loop is done, the element at index j will be lesser than "elementBeingSorted"
+            // OR the index j will be -1, which means we have reached the beginning of the array
             // Therefore index j+1 is the right position for "elementBeingSorted"
             array[j + 1] = elementBeingSorted;
 
