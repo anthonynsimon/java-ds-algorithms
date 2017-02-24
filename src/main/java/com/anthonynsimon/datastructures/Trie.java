@@ -4,8 +4,8 @@ import com.anthonynsimon.datastructures.util.TrieNode;
 
 public class Trie<T> {
 
-    protected final int charOffset = 97; // ASCII offset for lowercase chars
-    protected final int ALPHABET_COUNT = 26;
+    protected static final int CHAR_OFFSET = 97; // ASCII offset for lowercase chars
+    protected static final int ALPHABET_COUNT = 26;
 
     protected TrieNode<T> root;
 
@@ -59,7 +59,7 @@ public class Trie<T> {
 
     // Map the ASCII char index to the range of the 26 english letters
     protected int charIndexAt(String word, int index) {
-        return (int) word.charAt(index) - charOffset;
+        return (int) word.charAt(index) - CHAR_OFFSET;
     }
 
     protected void removeWorker(String word, TrieNode<T> node, int i) {
