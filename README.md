@@ -1,5 +1,7 @@
 # Data Structures and Algorithms in Java
 [![Build Status](https://travis-ci.org/anthonynsimon/java-ds-algorithms.svg?branch=master)](https://travis-ci.org/anthonynsimon/java-ds-algorithms)
+[![Test Coverage](https://codecov.io/gh/anthonynsimon/java-ds-algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/anthonynsimon/java-ds-algorithms)
+
 
 Trying out various DS and Algorithms for learning purposes and to refresh my Java skills.
 
