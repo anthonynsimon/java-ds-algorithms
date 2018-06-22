@@ -57,7 +57,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 ### Linked Lists
 - [Remove duplicate values](/src/main/java/com/anthonynsimon/algorithms/lists/RemoveListDuplicates.java)
 - [Find a the start of a loop in a linked list](/src/main/java/com/anthonynsimon/algorithms/lists/ListLoopChecker.java)
-- [Find Kth to last element (unkown list size)](/src/main/java/com/anthonynsimon/algorithms/lists/FindKthToLast.java)
+- [Find Kth to last element (unknown list size)](/src/main/java/com/anthonynsimon/algorithms/lists/FindKthToLast.java)
 - [Partition list in place](/src/main/java/com/anthonynsimon/algorithms/lists/PartitionList.java)
 - [Check if list is palindrome](/src/main/java/com/anthonynsimon/algorithms/lists/ListPalindromeChecker.java)
 - [Find intersection of two lists](/src/main/java/com/anthonynsimon/algorithms/lists/ListIntersection.java)
