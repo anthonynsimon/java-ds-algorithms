@@ -27,7 +27,7 @@ All with their corresponding tests. [Go to tests root directory](/src/test/java/
 - [Find the in-order successor of a node in a tree](/src/main/java/com/anthonynsimon/algorithms/trees/SuccessorFinder.java)
 - [Recursively calculate height and balance of tree in one pass](/src/main/java/com/anthonynsimon/algorithms/trees/CheckTreeBalance.java)
 - [Autocomplete a word using a Trie](/src/main/java/com/anthonynsimon/algorithms/trees/WordAutocompletion.java)
-- [Find the lowest Common Ancestor in a Binary Search Tree]()
+- [Find the lowest Common Ancestor in a Binary Search Tree](/src/main/java/com/anthonynsimon/datastructures/LcaTwoNodes.java )
 
 ### Arrays
 - [In-place matrix rotation](/src/main/java/com/anthonynsimon/algorithms/arrays/MatrixRotation.java)
